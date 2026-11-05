@@ -3,23 +3,25 @@
  "dropped": [
   "2002.12360"
  ],
- "human_paragraphs": 1480,
- "paper_mean_median": 0.08504967435310684,
- "paper_mean_min": 0.04051855368144632,
- "paper_mean_max": 0.12991552475247525,
- "para_median": 0.06645000000000001,
- "share_gt_015": 0.17027027027027028,
- "share_gt_025": 0.04864864864864865,
- "ours_paragraphs": 57,
+ "human_paragraphs": 1365,
+ "paper_mean_median": 0.07056851256851256,
+ "paper_mean_min": 0.03310936290038719,
+ "paper_mean_max": 0.12292969964933682,
+ "para_median": 0.0628,
+ "share_gt_015": 0.15457875457875458,
+ "share_gt_025": 0.04542124542124542,
+ "excluded_human": 116,
+ "excluded_ours": 7,
+ "ours_paragraphs": 50,
  "ours_means": {
-  "paper-jepa-world-model": 0.11879870996441279,
-  "paper-register-reproducibility": 0.17422122264675238,
-  "paper-reward-models-stopping-rule": 0.12685180616740088,
-  "paper-vla-edge-inference": 0.1523448834196891
+  "paper-jepa-world-model": 0.1302724229543039,
+  "paper-register-reproducibility": 0.18177162977867206,
+  "paper-reward-models-stopping-rule": 0.14511149700598802,
+  "paper-vla-edge-inference": 0.13764466095089634
  },
- "ours_above_human_max": 2,
+ "ours_above_human_max": 4,
  "ours_above_median": 4,
- "ours_share_gt_015": 0.543859649122807,
+ "ours_share_gt_015": 0.56,
  "types": {
   "introduction": {
    "n": 167,
@@ -34,28 +36,28 @@
    "share_gt_015": 0.12280701754385964
   },
   "method": {
-   "n": 134,
-   "median": 0.07289999999999999,
+   "n": 133,
+   "median": 0.0726,
    "p90": 0.174,
-   "share_gt_015": 0.17164179104477612
+   "share_gt_015": 0.17293233082706766
   },
   "results": {
-   "n": 147,
-   "median": 0.0463,
-   "p90": 0.172,
-   "share_gt_015": 0.12244897959183673
+   "n": 140,
+   "median": 0.0451,
+   "p90": 0.1692,
+   "share_gt_015": 0.11428571428571428
   },
   "conclusion": {
-   "n": 120,
-   "median": 0.052750000000000005,
-   "p90": 0.1663,
-   "share_gt_015": 0.125
+   "n": 82,
+   "median": 0.04345,
+   "p90": 0.1163,
+   "share_gt_015": 0.07317073170731707
   },
   "other": {
-   "n": 758,
-   "median": 0.07275000000000001,
-   "p90": 0.1972,
-   "share_gt_015": 0.18337730870712401
+   "n": 689,
+   "median": 0.0687,
+   "p90": 0.1871,
+   "share_gt_015": 0.15820029027576196
   }
  }
 }

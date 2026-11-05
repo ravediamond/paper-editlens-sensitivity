@@ -83,7 +83,7 @@ def collect():
     put("hr_med", u(HR["paper_mean_median"]), ha); put("hr_min", u(HR["paper_mean_min"]), ha); put("hr_max", u(HR["paper_mean_max"]), ha)
     put("hr_para_med", u(HR["para_median"]), ha); put("hr_gt15", f"{round(100 * HR['share_gt_015'])}", ha + " share_gt_015 x 100"); put("hr_gt25", f"{round(100 * HR['share_gt_025'])}", ha + " share_gt_025 x 100")
     put("hr_ours_above", str(HR["ours_above_human_max"]), ha); put("hr_ours_all", str(len(HR["ours_means"])), ha); put("hr_ours_gt15", f"{round(100 * HR['ours_share_gt_015'])}", ha + " ours_share_gt_015 x 100")
-    put("hr_ours_paras", str(HR["ours_paragraphs"]), ha)
+    put("hr_ours_paras", str(HR["ours_paragraphs"]), ha); put("hr_excl", str(HR["excluded_human"]), ha)
     for t, k in [("introduction", "intro"), ("related", "rel"), ("method", "meth"), ("results", "res"), ("conclusion", "conc"), ("other", "oth")]:
         d = HR["types"][t]; put(f"hr_{k}_n", str(d["n"]), ha + f" types.{t}"); put(f"hr_{k}_med", u(d["median"]), ha + f" types.{t}"); put(f"hr_{k}_p90", u(d["p90"]), ha + f" types.{t}")
     for p, k in [("paper-register-reproducibility", "reg"), ("paper-jepa-world-model", "jepa"), ("paper-reward-models-stopping-rule", "rew"), ("paper-vla-edge-inference", "vla")]:

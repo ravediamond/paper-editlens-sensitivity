@@ -4,7 +4,7 @@
 
 ## Abstract
 
-A correlation table of sentence scores suggests what to change in a text to lower its AI-edit score. We tested its five suggestions as controlled edits on 62 paragraphs of four of our robotics papers, scored with Pangram's open EditLens model, and three did not hold. Joining two sentences with a semicolon raised the score of 92 % of the paragraphs, by +0.047 on average, but an appended verdict sentence lowered it. Rewriting paragraphs against their sentence-level scores moved the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.085, and 2 of our four papers still score above all of them. Style features that go with low scores in the human papers did not lower the score of 5 of 7 paragraphs when we added them.
+A correlation table of sentence scores suggests what to change in a text to lower its AI-edit score. We tested its five suggestions as controlled edits on 62 paragraphs of four of our robotics papers, scored with Pangram's open EditLens model, and three did not hold. Joining two sentences with a semicolon raised the score of 92 % of the paragraphs, by +0.047 on average, but an appended verdict sentence lowered it. Rewriting paragraphs against their sentence-level scores moved the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.071, and 4 of our four papers still score above all of them. Style features that go with low scores in the human papers did not lower the score of 5 of 7 paragraphs when we added them.
 
 ## 1 Introduction
 
@@ -20,7 +20,7 @@ A score also needs a scale. We therefore scored 39 human robot-learning papers f
 
 The scorer is `pangram/editlens_Llama-3.2-3B`, the open model, on a Jetson Orin NX at 25 W. The production detector that flagged the papers is a different and stronger model, and we did not run it. The model is licensed for non-commercial use and we used it on our own four papers only.
 
-The texts are the rendered drafts of four papers: a register of re-tested robot-learning claims, a JEPA world model on a low-cost arm, reward models and a stopping rule, and chunking tricks for a VLA on an edge GPU. Citations are stripped and the model lower-cases its input. Paragraphs of at least 40 words are scored on their own, since shorter ones are noisy. There are 62 of them, in 469 sentences. As a human reference we took the first 40 results of an arXiv query for robot-learning papers submitted from 2018 to 2021 (the rule is in `repro/human-reference/PROTOCOL.md`) and read their PDFs with the same extractor we used on our own four built PDFs. 1 paper had too few scoreable paragraphs and was dropped, which leaves 39 papers and 1,480 paragraphs.
+The texts are the rendered drafts of four papers: a register of re-tested robot-learning claims, a JEPA world model on a low-cost arm, reward models and a stopping rule, and chunking tricks for a VLA on an edge GPU. Citations are stripped and the model lower-cases its input. Paragraphs of at least 40 words are scored on their own, since shorter ones are noisy. There are 62 of them, in 469 sentences. As a human reference we took the first 40 results of an arXiv query for robot-learning papers submitted from 2018 to 2021 (the rule is in `repro/human-reference/PROTOCOL.md`) and read their PDFs with the same extractor we used on our own four built PDFs. 1 paper had too few scoreable paragraphs and was dropped. Reference lists and acknowledgements that the extractor had kept as prose (116 paragraphs, found after the first scoring because they were among the highest scores) were excluded, which leaves 39 papers and 1,365 paragraphs.
 
 An edit changes one thing in every paragraph that contains it, and we report the mean change in the paragraph score with a 95 % bootstrap interval over paragraphs. An edit that changes only case and spacing gives exactly 0.000, because the model normalizes both. We removed semicolons and colons from the texts before this test, so for these two we could only test adding them.
 
@@ -75,7 +75,7 @@ Table 3: Word-weighted mean paragraph score before and after the rewrite.
 | reward models and a stopping rule | 21 | 0.202 | 0.189 |
 | chunking tricks on an edge GPU | 18 | 0.233 | 0.207 |
 
-The largest single drops came from three changes, listed in Table 4. Merging sentences into longer ones with "so" or "which means" raised a limitations paragraph from 0.275 to 0.365 in the first variant, and the other two variants did the same. Paragraphs made of numbers, bars and verdicts stayed above the median of human results paragraphs (0.046) whatever we did.
+The largest single drops came from three changes, listed in Table 4. Merging sentences into longer ones with "so" or "which means" raised a limitations paragraph from 0.275 to 0.365 in the first variant, and the other two variants did the same. Paragraphs made of numbers, bars and verdicts stayed above the median of human results paragraphs (0.045) whatever we did.
 
 Table 4: The three largest drops in one paragraph, by the change that caused them.
 
@@ -91,7 +91,7 @@ We also tried to turn the sentence scores into a list of words. A lexicon built 
 
 ### 3.5 A human reference
 
-Table 5 gives the paragraph scores of the 39 human papers by the type of section. The paper means run from 0.041 to 0.130 with a median of 0.085. The median paragraph scores 0.066, 17 % of the paragraphs score above 0.15, and 5 % score above 0.25. Results paragraphs have a median of 0.046, so a results paragraph at 0.15, the level where ours stopped, is high for a human one.
+Table 5 gives the paragraph scores of the 39 human papers by the type of section. The paper means run from 0.033 to 0.123 with a median of 0.071. The median paragraph scores 0.063, 15 % of the paragraphs score above 0.15, and 5 % score above 0.25. Results paragraphs have a median of 0.045, so a results paragraph at 0.15, the level where ours stopped, is high for a human one.
 
 Table 5: Paragraph scores of the human reference papers by section type, read from the PDFs. Section types come from the headings and are rough.
 
@@ -99,27 +99,27 @@ Table 5: Paragraph scores of the human reference papers by section type, read fr
 |---|---|---|---|
 | introduction | 167 | 0.053 | 0.177 |
 | related work | 114 | 0.063 | 0.153 |
-| method | 134 | 0.073 | 0.174 |
-| results | 147 | 0.046 | 0.172 |
-| conclusion | 120 | 0.053 | 0.166 |
-| other or not recognised | 758 | 0.073 | 0.197 |
+| method | 133 | 0.073 | 0.174 |
+| results | 140 | 0.045 | 0.169 |
+| conclusion | 82 | 0.043 | 0.116 |
+| other or not recognised | 689 | 0.069 | 0.187 |
 
-Read the same way, our four built PDFs have paper means of 0.174, 0.119, 0.127 and 0.152, and 54 % of their 57 scoreable paragraphs score above 0.15. All four lie above the human median, and 2 of the 4 lie above the highest human paper.
+Read the same way, our four built PDFs have paper means of 0.182, 0.130, 0.145 and 0.138, and 56 % of their 50 scoreable paragraphs score above 0.15. All four lie above the human median, and 4 of the 4 lie above the highest human paper.
 
 ### 3.6 Writing in the style of the human papers
 
-Our papers score above the human ones, so we measured style features of the human paragraphs and of ours (Table 6) and looked for the ones that go with a low score. The rank correlations are weak, at most 0.25 in absolute value. The largest gaps between our paragraphs and the human ones are the numeric tokens, the passive constructions, and the contrast and connective words. Our paragraphs have 9.54 numeric tokens per 100 words where the human paragraphs below 0.05 have 4.51.
+Our papers score above the human ones, so we measured style features of the human paragraphs and of ours (Table 6) and looked for the ones that go with a low score. The rank correlations are weak, at most 0.30 in absolute value. The largest gaps between our paragraphs and the human ones are the numeric tokens, the passive constructions, and the contrast and connective words. Our paragraphs have 8.56 numeric tokens per 100 words where the human paragraphs below 0.05 have 4.29.
 
-Table 6: Style features of the human paragraphs by score, and of ours, read from the PDFs. Counts are per 100 words except the last row. Low is the 564 human paragraphs below 0.05 and high the 252 above 0.15.
+Table 6: Style features of the human paragraphs by score, and of ours, read from the PDFs. Counts are per 100 words except the last row. Low is the 542 human paragraphs below 0.05 and high the 211 above 0.15.
 
 | feature | rank correlation with score | low | high | ours |
 |---|---|---|---|---|
-| numeric tokens | −0.03 | 4.51 | 4.99 | 9.54 |
-| passive constructions | −0.16 | 1.09 | 0.75 | 0.36 |
-| contrast words | −0.12 | 0.35 | 0.29 | 0.07 |
-| connective words | −0.14 | 0.28 | 0.10 | 0.19 |
-| commas | +0.15 | 5.60 | 8.86 | 5.54 |
-| words per paragraph | −0.21 | 205 | 164 | 144 |
+| numeric tokens | −0.12 | 4.29 | 3.66 | 8.56 |
+| passive constructions | −0.12 | 1.12 | 0.89 | 0.40 |
+| contrast words | −0.10 | 0.36 | 0.35 | 0.08 |
+| connective words | −0.13 | 0.29 | 0.12 | 0.21 |
+| commas | +0.09 | 5.16 | 5.99 | 4.35 |
+| words per paragraph | −0.28 | 199 | 125 | 137 |
 
 We rewrote 7 paragraphs of two of our papers in that direction, in our own words and with every number kept, joining clauses with contrast and connective words and using the passive for procedures. Of the 8 candidates, 5 scored higher than the paragraph they replaced and 2 lower, and the mean change was +0.020. No candidate lowered 5 of the 7 paragraphs. The related-work paragraph of the register paper rose from 0.194 to 0.280. The features that go with low scores across human paragraphs did not lower ours when we added them, which is the same gap between a correlation and an edit as in Section 3.2.
 
@@ -129,7 +129,7 @@ The model is the open 3B one, and the detector that flagged the papers is anothe
 
 We drafted the four papers with Claude Code, and Claude Code wrote the rewrites in this paper too. The author has not yet read the rewrites paragraph by paragraph. The open EditLens model scores a paragraph low when it sees little AI editing in it. We do not read the score as who wrote the paragraph.
 
-Table 1 changes one feature per edit. A real rewrite changes several at once. We have not run the test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs. That test would show whether their effects add up. All 62 paragraphs come from the four papers of one author, on one SO-101 arm and one Jetson Orin NX. The five appended sentences are our own examples, and other wording could behave differently. The human reference is the first 40 results of one query, not a sample of the field, and its section types are rough because many headings were not recognised. Our own four PDFs give only 57 scoreable paragraphs, so their section types are not compared. The style trial is 7 paragraphs from two papers, one round, with features we chose, so it shows that these edits did not help in that sample and does not rule them out.
+Table 1 changes one feature per edit. A real rewrite changes several at once. We have not run the test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs. That test would show whether their effects add up. All 62 paragraphs come from the four papers of one author, on one SO-101 arm and one Jetson Orin NX. The five appended sentences are our own examples, and other wording could behave differently. The human reference is the first 40 results of one query, not a sample of the field, and its section types are rough because many headings were not recognised. Our own four PDFs give only 50 scoreable paragraphs, so their section types are not compared. The style trial is 7 paragraphs from two papers, one round, with features we chose, so it shows that these edits did not help in that sample and does not rule them out.
 
 ## 5 Related work
 

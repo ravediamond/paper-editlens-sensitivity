@@ -96,23 +96,27 @@
   "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.first_half_only"
  },
  "hr_conc_med": {
-  "value": "0.053",
+  "value": "0.043",
   "anchor": "repro/human-reference/expected/summary.json types.conclusion"
  },
  "hr_conc_n": {
-  "value": "120",
+  "value": "82",
   "anchor": "repro/human-reference/expected/summary.json types.conclusion"
  },
  "hr_conc_p90": {
-  "value": "0.166",
+  "value": "0.116",
   "anchor": "repro/human-reference/expected/summary.json types.conclusion"
  },
  "hr_dropped": {
   "value": "1",
   "anchor": "repro/human-reference/expected/summary.json"
  },
+ "hr_excl": {
+  "value": "116",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
  "hr_gt15": {
-  "value": "17",
+  "value": "15",
   "anchor": "repro/human-reference/expected/summary.json share_gt_015 x 100"
  },
  "hr_gt25": {
@@ -132,11 +136,11 @@
   "anchor": "repro/human-reference/expected/summary.json types.introduction"
  },
  "hr_max": {
-  "value": "0.130",
+  "value": "0.123",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_med": {
-  "value": "0.085",
+  "value": "0.071",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_meth_med": {
@@ -144,7 +148,7 @@
   "anchor": "repro/human-reference/expected/summary.json types.method"
  },
  "hr_meth_n": {
-  "value": "134",
+  "value": "133",
   "anchor": "repro/human-reference/expected/summary.json types.method"
  },
  "hr_meth_p90": {
@@ -152,7 +156,7 @@
   "anchor": "repro/human-reference/expected/summary.json types.method"
  },
  "hr_min": {
-  "value": "0.041",
+  "value": "0.033",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_n": {
@@ -160,19 +164,19 @@
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_oth_med": {
-  "value": "0.073",
+  "value": "0.069",
   "anchor": "repro/human-reference/expected/summary.json types.other"
  },
  "hr_oth_n": {
-  "value": "758",
+  "value": "689",
   "anchor": "repro/human-reference/expected/summary.json types.other"
  },
  "hr_oth_p90": {
-  "value": "0.197",
+  "value": "0.187",
   "anchor": "repro/human-reference/expected/summary.json types.other"
  },
  "hr_ours_above": {
-  "value": "2",
+  "value": "4",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_ours_all": {
@@ -180,35 +184,35 @@
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_ours_gt15": {
-  "value": "54",
+  "value": "56",
   "anchor": "repro/human-reference/expected/summary.json ours_share_gt_015 x 100"
  },
  "hr_ours_jepa": {
-  "value": "0.119",
+  "value": "0.130",
   "anchor": "repro/human-reference/expected/summary.json ours_means.paper-jepa-world-model"
  },
  "hr_ours_paras": {
-  "value": "57",
+  "value": "50",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_ours_reg": {
-  "value": "0.174",
+  "value": "0.182",
   "anchor": "repro/human-reference/expected/summary.json ours_means.paper-register-reproducibility"
  },
  "hr_ours_rew": {
-  "value": "0.127",
+  "value": "0.145",
   "anchor": "repro/human-reference/expected/summary.json ours_means.paper-reward-models-stopping-rule"
  },
  "hr_ours_vla": {
-  "value": "0.152",
+  "value": "0.138",
   "anchor": "repro/human-reference/expected/summary.json ours_means.paper-vla-edge-inference"
  },
  "hr_para_med": {
-  "value": "0.066",
+  "value": "0.063",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_paras": {
-  "value": "1,480",
+  "value": "1,365",
   "anchor": "repro/human-reference/expected/summary.json"
  },
  "hr_rel_med": {
@@ -224,15 +228,15 @@
   "anchor": "repro/human-reference/expected/summary.json types.related"
  },
  "hr_res_med": {
-  "value": "0.046",
+  "value": "0.045",
   "anchor": "repro/human-reference/expected/summary.json types.results"
  },
  "hr_res_n": {
-  "value": "147",
+  "value": "140",
   "anchor": "repro/human-reference/expected/summary.json types.results"
  },
  "hr_res_p90": {
-  "value": "0.172",
+  "value": "0.169",
   "anchor": "repro/human-reference/expected/summary.json types.results"
  },
  "hum1": {
@@ -452,111 +456,111 @@
   "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
  },
  "st_cnx_hi": {
-  "value": "0.10",
+  "value": "0.12",
   "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.high"
  },
  "st_cnx_lo": {
-  "value": "0.28",
+  "value": "0.29",
   "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.low"
  },
  "st_cnx_ours": {
-  "value": "0.19",
+  "value": "0.21",
   "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.ours"
  },
  "st_cnx_rho": {
-  "value": "−0.14",
+  "value": "−0.13",
   "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.spearman"
  },
  "st_com_hi": {
-  "value": "8.86",
+  "value": "5.99",
   "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.high"
  },
  "st_com_lo": {
-  "value": "5.60",
+  "value": "5.16",
   "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.low"
  },
  "st_com_ours": {
-  "value": "5.54",
+  "value": "4.35",
   "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.ours"
  },
  "st_com_rho": {
-  "value": "+0.15",
+  "value": "+0.09",
   "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.spearman"
  },
  "st_con_hi": {
-  "value": "0.29",
+  "value": "0.35",
   "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.high"
  },
  "st_con_lo": {
-  "value": "0.35",
+  "value": "0.36",
   "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.low"
  },
  "st_con_ours": {
-  "value": "0.07",
+  "value": "0.08",
   "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.ours"
  },
  "st_con_rho": {
-  "value": "−0.12",
+  "value": "−0.10",
   "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.spearman"
  },
  "st_dig_hi": {
-  "value": "4.99",
+  "value": "3.66",
   "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.high"
  },
  "st_dig_lo": {
-  "value": "4.51",
+  "value": "4.29",
   "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.low"
  },
  "st_dig_ours": {
-  "value": "9.54",
+  "value": "8.56",
   "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.ours"
  },
  "st_dig_rho": {
-  "value": "−0.03",
+  "value": "−0.12",
   "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.spearman"
  },
  "st_maxrho": {
-  "value": "0.25",
+  "value": "0.30",
   "anchor": "repro/human-reference/expected/style_summary.json features, largest absolute rank correlation"
  },
  "st_n_high": {
-  "value": "252",
+  "value": "211",
   "anchor": "repro/human-reference/expected/style_summary.json"
  },
  "st_n_low": {
-  "value": "564",
+  "value": "542",
   "anchor": "repro/human-reference/expected/style_summary.json"
  },
  "st_pas_hi": {
-  "value": "0.75",
+  "value": "0.89",
   "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.high"
  },
  "st_pas_lo": {
-  "value": "1.09",
+  "value": "1.12",
   "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.low"
  },
  "st_pas_ours": {
-  "value": "0.36",
+  "value": "0.40",
   "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.ours"
  },
  "st_pas_rho": {
-  "value": "−0.16",
+  "value": "−0.12",
   "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.spearman"
  },
  "st_wds_hi": {
-  "value": "164",
+  "value": "125",
   "anchor": "repro/human-reference/expected/style_summary.json features.words.high"
  },
  "st_wds_lo": {
-  "value": "205",
+  "value": "199",
   "anchor": "repro/human-reference/expected/style_summary.json features.words.low"
  },
  "st_wds_ours": {
-  "value": "144",
+  "value": "137",
   "anchor": "repro/human-reference/expected/style_summary.json features.words.ours"
  },
  "st_wds_rho": {
-  "value": "−0.21",
+  "value": "−0.28",
   "anchor": "repro/human-reference/expected/style_summary.json features.words.spearman"
  },
  "tr_cands": {
