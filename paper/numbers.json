@@ -451,6 +451,146 @@
   "value": "28",
   "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
  },
+ "st_cnx_hi": {
+  "value": "0.10",
+  "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.high"
+ },
+ "st_cnx_lo": {
+  "value": "0.28",
+  "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.low"
+ },
+ "st_cnx_ours": {
+  "value": "0.19",
+  "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.ours"
+ },
+ "st_cnx_rho": {
+  "value": "−0.14",
+  "anchor": "repro/human-reference/expected/style_summary.json features.connective_per100.spearman"
+ },
+ "st_com_hi": {
+  "value": "8.86",
+  "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.high"
+ },
+ "st_com_lo": {
+  "value": "5.60",
+  "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.low"
+ },
+ "st_com_ours": {
+  "value": "5.54",
+  "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.ours"
+ },
+ "st_com_rho": {
+  "value": "+0.15",
+  "anchor": "repro/human-reference/expected/style_summary.json features.comma_per100.spearman"
+ },
+ "st_con_hi": {
+  "value": "0.29",
+  "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.high"
+ },
+ "st_con_lo": {
+  "value": "0.35",
+  "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.low"
+ },
+ "st_con_ours": {
+  "value": "0.07",
+  "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.ours"
+ },
+ "st_con_rho": {
+  "value": "−0.12",
+  "anchor": "repro/human-reference/expected/style_summary.json features.contrast_per100.spearman"
+ },
+ "st_dig_hi": {
+  "value": "4.99",
+  "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.high"
+ },
+ "st_dig_lo": {
+  "value": "4.51",
+  "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.low"
+ },
+ "st_dig_ours": {
+  "value": "9.54",
+  "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.ours"
+ },
+ "st_dig_rho": {
+  "value": "−0.03",
+  "anchor": "repro/human-reference/expected/style_summary.json features.digit_tok_per100.spearman"
+ },
+ "st_maxrho": {
+  "value": "0.25",
+  "anchor": "repro/human-reference/expected/style_summary.json features, largest absolute rank correlation"
+ },
+ "st_n_high": {
+  "value": "252",
+  "anchor": "repro/human-reference/expected/style_summary.json"
+ },
+ "st_n_low": {
+  "value": "564",
+  "anchor": "repro/human-reference/expected/style_summary.json"
+ },
+ "st_pas_hi": {
+  "value": "0.75",
+  "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.high"
+ },
+ "st_pas_lo": {
+  "value": "1.09",
+  "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.low"
+ },
+ "st_pas_ours": {
+  "value": "0.36",
+  "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.ours"
+ },
+ "st_pas_rho": {
+  "value": "−0.16",
+  "anchor": "repro/human-reference/expected/style_summary.json features.passive_per100.spearman"
+ },
+ "st_wds_hi": {
+  "value": "164",
+  "anchor": "repro/human-reference/expected/style_summary.json features.words.high"
+ },
+ "st_wds_lo": {
+  "value": "205",
+  "anchor": "repro/human-reference/expected/style_summary.json features.words.low"
+ },
+ "st_wds_ours": {
+  "value": "144",
+  "anchor": "repro/human-reference/expected/style_summary.json features.words.ours"
+ },
+ "st_wds_rho": {
+  "value": "−0.21",
+  "anchor": "repro/human-reference/expected/style_summary.json features.words.spearman"
+ },
+ "tr_cands": {
+  "value": "8",
+  "anchor": "repro/human-reference/expected/style_summary.json trials"
+ },
+ "tr_higher": {
+  "value": "5",
+  "anchor": "repro/human-reference/expected/style_summary.json trials"
+ },
+ "tr_lower": {
+  "value": "2",
+  "anchor": "repro/human-reference/expected/style_summary.json trials"
+ },
+ "tr_mean": {
+  "value": "+0.020",
+  "anchor": "repro/human-reference/expected/style_summary.json trials.mean_change"
+ },
+ "tr_not_lower": {
+  "value": "5",
+  "anchor": "repro/human-reference/expected/style_summary.json trials"
+ },
+ "tr_paras": {
+  "value": "7",
+  "anchor": "repro/human-reference/expected/style_summary.json trials"
+ },
+ "tr_rw_a": {
+  "value": "0.280",
+  "anchor": "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 1"
+ },
+ "tr_rw_b": {
+  "value": "0.194",
+  "anchor": "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 0"
+ },
  "verdict": {
   "value": "−0.015",
   "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict"

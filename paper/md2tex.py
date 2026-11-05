@@ -26,6 +26,7 @@ def esc(x):
 
 RP = r">{\raggedright\arraybackslash}p"  # ragged cells: long file names must not overflow the column
 COLSPEC = {3: ("table", RP + "{3.1cm}" + RP + "{1.4cm}" + RP + "{3.5cm}"),
+           5: ("table", RP + "{2.9cm}" + RP + "{1.3cm}" + RP + "{1.2cm}" + RP + "{1.2cm}" + RP + "{1.2cm}"),
            4: ("table", RP + "{3.3cm}" + RP + "{1.9cm}" + RP + "{1.4cm}" + RP + "{1.4cm}")}
 
 

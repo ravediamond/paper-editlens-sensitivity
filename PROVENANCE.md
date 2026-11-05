@@ -87,3 +87,7 @@ Every file with its source. `derived` = generated or written for this repository
 | `repro/human-reference/expected/rows_v1_extractor.json` | derived | | derived: first run with the road-to-robotics pdf_sections extractor (scores reused by hash) | cc445f838e32 |
 | `repro/human-reference/expected/summary.json` | derived | | derived: l0_check.py --write | bfe1612febec |
 | `repro/human-reference/expected/selected.json` | derived | | derived: arXiv API result list of 2026-11-05 (first 40 pre-2022 results) | ebe022aba417 |
+| `repro/human-reference/scripts/style_features.py` | derived | | derived: written for this repository | 9c02f8e964d3 |
+| `repro/human-reference/expected/style_rows.json` | derived | | derived: scripts/style_features.py, features per paragraph, no text | d32b1a676c91 |
+| `repro/human-reference/expected/style_trials.jsonl` | derived | | derived: ws paper-polish try, round s1, from the polish logs of paper-vla-edge-inference and paper-register-reproducibility | 0f0752c1669b |
+| `repro/human-reference/expected/style_summary.json` | derived | | derived: l0_check.py --write | 4bba10d111a7 |

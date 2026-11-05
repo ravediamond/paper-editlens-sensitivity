@@ -88,6 +88,18 @@ def collect():
         d = HR["types"][t]; put(f"hr_{k}_n", str(d["n"]), ha + f" types.{t}"); put(f"hr_{k}_med", u(d["median"]), ha + f" types.{t}"); put(f"hr_{k}_p90", u(d["p90"]), ha + f" types.{t}")
     for p, k in [("paper-register-reproducibility", "reg"), ("paper-jepa-world-model", "jepa"), ("paper-reward-models-stopping-rule", "rew"), ("paper-vla-edge-inference", "vla")]:
         put(f"hr_ours_{k}", u(HR["ours_means"][p]), ha + f" ours_means.{p}")
+    SY = J(R / "human-reference" / "expected" / "style_summary.json"); sa = "repro/human-reference/expected/style_summary.json"
+    put("st_maxrho", u(max(abs(v["spearman"]) for v in SY["features"].values()), 2), sa + " features, largest absolute rank correlation")
+    for k, key in [("dig", "digit_tok_per100"), ("pas", "passive_per100"), ("con", "contrast_per100"), ("cnx", "connective_per100"), ("com", "comma_per100"), ("wds", "words")]:
+        f = SY["features"][key]; d = 0 if key == "words" else 2
+        put(f"st_{k}_rho", s(f["spearman"], 2), sa + f" features.{key}.spearman"); put(f"st_{k}_lo", u(f["low"], d), sa + f" features.{key}.low")
+        put(f"st_{k}_hi", u(f["high"], d), sa + f" features.{key}.high"); put(f"st_{k}_ours", u(f["ours"], d), sa + f" features.{key}.ours")
+    tr = SY["trials"]; put("tr_paras", str(tr["paragraphs"]), sa + " trials"); put("tr_cands", str(tr["candidates"]), sa + " trials"); put("tr_lower", str(tr["lower"]), sa + " trials")
+    put("tr_higher", str(tr["higher"]), sa + " trials"); put("tr_mean", s(tr["mean_change"]), sa + " trials.mean_change"); put("tr_not_lower", str(tr["paragraphs"] - tr["paragraphs_best_lower"]), sa + " trials")
+    put("st_n_low", str(SY["n_low"]), sa); put("st_n_high", str(SY["n_high"]), sa)
+    tl = [json.loads(x) for x in (R / "human-reference" / "expected" / "style_trials.jsonl").read_text().splitlines()]
+    rw = {x["cand"]: x["score"] for x in tl if x["paper"] == "register-reproducibility" and x["para"] == 14}
+    put("tr_rw_b", u(rw[0]), "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 0"); put("tr_rw_a", u(rw[1]), "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 1")
 
 CITE = {"thai2025editlens": "Thai et al. 2025", "saha2025polish": "Saha and Feizi 2025", "krishna2023paraphrase": "Krishna et al. 2023",
         "cheng2025adversarial": "Cheng et al. 2025", "masrour2025damage": "Masrour et al. 2025"}

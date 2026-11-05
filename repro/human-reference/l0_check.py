@@ -34,10 +34,42 @@ def summarize(rows):
     return S
 
 
+def rank(x):
+    o = sorted(range(len(x)), key=lambda i: x[i]); r = [0] * len(x)
+    for k, i in enumerate(o):
+        r[i] = k
+    return r
+
+
+def corr(a, b):
+    ma, mb = st.mean(a), st.mean(b); da = sum((x - ma) ** 2 for x in a); db = sum((x - mb) ** 2 for x in b)
+    return sum((x - ma) * (y - mb) for x, y in zip(a, b)) / (da * db) ** 0.5 if da and db else 0
+
+
+def style_summary():
+    R = json.loads((E / "style_rows.json").read_text())
+    H = [r for r in R if r["group"] == "human" and r["paper"] not in DROPPED]; O = [r for r in R if r["group"] == "ours"]
+    lo = [r for r in H if r["score"] < 0.05]; hi = [r for r in H if r["score"] > 0.15]; sc = [r["score"] for r in H]; out = {"n_human": len(H), "n_low": len(lo), "n_high": len(hi), "n_ours": len(O), "features": {}}
+    for k in [k for k in H[0] if k not in ("paper", "group", "sha1", "type", "score")]:
+        out["features"][k] = {"spearman": corr(rank([r[k] for r in H]), rank(sc)), "low": st.mean(r[k] for r in lo), "high": st.mean(r[k] for r in hi), "ours": st.mean(r[k] for r in O)}
+    T = [json.loads(l) for l in (E / "style_trials.jsonl").read_text().splitlines()]; by = collections.defaultdict(list)
+    for t in T:
+        by[(t["paper"], t["para"])].append(t)
+    d = []
+    for v in by.values():
+        cur = [x for x in v if x["cand"] == 0][0]["score"]; d += [x["score"] - cur for x in v if x["cand"] > 0]
+    best = [min(x["score"] for x in v if x["cand"] > 0) - [x for x in v if x["cand"] == 0][0]["score"] for v in by.values()]
+    out["trials"] = {"paragraphs": len(by), "candidates": len(d), "lower": sum(x < -0.005 for x in d), "higher": sum(x > 0.005 for x in d), "paragraphs_best_lower": sum(b < -0.005 for b in best), "mean_change": st.mean(d)}
+    return out
+
+
+DROPPED = ["2002.12360"]
+
+
 def main():
-    rows = json.loads((E / "rows.json").read_text()); S = summarize(rows)
+    rows = json.loads((E / "rows.json").read_text()); S = summarize(rows); Y = style_summary()
     if "--write" in sys.argv:
-        (E / "summary.json").write_text(json.dumps(S, indent=1)); print("written"); return
+        (E / "summary.json").write_text(json.dumps(S, indent=1)); (E / "style_summary.json").write_text(json.dumps(Y, indent=1)); print("written"); return
     W = json.loads((E / "summary.json").read_text()); fails = 0
 
     def check(name, got, want, tol=1e-9):
@@ -53,6 +85,14 @@ def main():
         for k, v in d.items():
             check(f"{t} {k}", v, W["types"][t][k])
     assert S["dropped"] == W["dropped"], (S["dropped"], W["dropped"])
+    Z = json.loads((E / "style_summary.json").read_text())
+    for k in ["n_human", "n_low", "n_high", "n_ours"]:
+        check("style " + k, Y[k], Z[k])
+    for f, d in Y["features"].items():
+        for k, v in d.items():
+            check(f"style {f} {k}", v, Z["features"][f][k], 1e-9)
+    for k, v in Y["trials"].items():
+        check("trials " + k, v, Z["trials"][k], 1e-9)
     print("L0 PASS" if not fails else f"L0 FAIL ({fails})")
 
 
