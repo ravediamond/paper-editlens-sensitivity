@@ -1,6 +1,6 @@
 # What moves an open AI-edit detector on technical prose
 
-Edits to four robotics papers, tested one at a time against Pangram's open EditLens 3B model. A correlation table of 469 sentences suggested five features (semicolons, contrast framing, advice, verdict words, "we"); as controlled edits on 62 paragraphs two held, one reversed and two did nothing. The repository also holds the paragraph-by-paragraph rewrite of the four papers that followed, with the scores of every candidate.
+Controlled edits, one feature at a time, scored with Pangram's open EditLens 3B model on four robotics papers. A correlation table of 469 sentences suggested five features (semicolons, contrast framing, advice, verdict words, "we"); as controlled edits on 62 paragraphs two held, one reversed and two did nothing. The repository also holds the paragraph-by-paragraph rewrite of the four papers that followed, with the scores of every candidate.
 
 The scorer is the open model, not the production Pangram detector, and the texts were drafted and rewritten with an AI assistant. A low score is a pointer to paragraphs to reread. It does not say who wrote a paragraph.
 
