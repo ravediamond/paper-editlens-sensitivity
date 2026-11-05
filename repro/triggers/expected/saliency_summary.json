@@ -1,0 +1,47 @@
+{
+ "H_intro_0.512": {
+  "score": 0.5119469165802002,
+  "words": 80,
+  "top10pct_share_of_positive": 0.6993914281463944
+ },
+ "H_tableIX_0.412": {
+  "score": 0.41163524985313416,
+  "words": 45,
+  "top10pct_share_of_positive": 0.40793368858741014
+ },
+ "H_importantly_0.402": {
+  "score": 0.40216025710105896,
+  "words": 52,
+  "top10pct_share_of_positive": 0.33708642867348193
+ },
+ "H_low_0.005": {
+  "score": 0.004639377351850271,
+  "words": 200,
+  "top10pct_share_of_positive": 0.56124760960491
+ },
+ "O_top_0.315": {
+  "score": 0.31518036127090454,
+  "words": 113,
+  "top10pct_share_of_positive": 0.49976119565877175
+ },
+ "O_second_0.309": {
+  "score": 0.3093026876449585,
+  "words": 82,
+  "top10pct_share_of_positive": 0.4847460969989291
+ },
+ "O_top_after_0.164": {
+  "score": 0.16440880298614502,
+  "words": 118,
+  "top10pct_share_of_positive": 0.46157657430778404
+ },
+ "O_top_plus_AIism": {
+  "score": 0.2726280689239502,
+  "words": 127,
+  "top10pct_share_of_positive": 0.5039298106341815
+ },
+ "H_low_plus_AIism": {
+  "score": 0.01072246115654707,
+  "words": 214,
+  "top10pct_share_of_positive": 0.5080446411187686
+ }
+}

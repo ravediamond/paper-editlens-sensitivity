@@ -123,13 +123,40 @@ Table 6: Style features of the human paragraphs by score, and of ours, read from
 
 We rewrote {{tr_paras}} paragraphs of two of our papers in that direction, in our own words and with every number kept, joining clauses with contrast and connective words and using the passive for procedures. Of the {{tr_cands}} candidates, {{tr_higher}} scored higher than the paragraph they replaced and {{tr_lower}} lower, and the mean change was {{tr_mean}}. No candidate lowered {{tr_not_lower}} of the {{tr_paras}} paragraphs. The related-work paragraph of the register paper rose from {{tr_rw_b}} to {{tr_rw_a}}. The features that go with low scores across human paragraphs did not lower ours when we added them, which is the same gap between a correlation and an edit as in Section 3.2.
 
+### 3.7 What the model reacts to
+
+The first battery of edits used the highest and lowest paragraphs as hosts and misled us, because at the ends of the score any edit seems to move a paragraph toward the middle. The second battery uses {{trg_n_h}} random human paragraphs and our {{trg_n_o}}, with a control that appends or prepends a real sentence from another paragraph. The control moves a human paragraph by {{trg_ctl_a_h}} when appended and {{trg_ctl_p_h}} when prepended, and ours by {{trg_ctl_a_o}} and {{trg_ctl_p_o}}.
+
+Table 7: Single edits on hosts not chosen by their score. Mean change in the paragraph score with a 95 % bootstrap CI. The base mean is {{trg_base_o}} for ours and {{trg_base_h}} for the human paragraphs.
+
+| edit | ours | human, random |
+|---|---|---|
+| language-model-style sentence appended | {{trg_ai_a_o}} ({{trg_ai_a_o_ci}}) | {{trg_ai_a_h}} ({{trg_ai_a_h_ci}}) |
+| language-model-style sentence prepended | {{trg_ai_p_o}} ({{trg_ai_p_o_ci}}) | {{trg_ai_p_h}} ({{trg_ai_p_h_ci}}) |
+| generic opener on an important and challenging problem | {{trg_mot_o}} ({{trg_mot_o_ci}}) | {{trg_mot_h}} ({{trg_mot_h_ci}}) |
+| generic sentence on importance appended | {{trg_imp_o}} ({{trg_imp_o_ci}}) | {{trg_imp_h}} ({{trg_imp_h_ci}}) |
+| neutral figure pointer appended | {{trg_ptr_a_o}} ({{trg_ptr_a_o_ci}}) | {{trg_ptr_a_h}} ({{trg_ptr_a_h_ci}}) |
+| neutral figure pointer prepended | {{trg_ptr_p_o}} ({{trg_ptr_p_o_ci}}) | {{trg_ptr_p_h}} ({{trg_ptr_p_h_ci}}) |
+| long specific technical paragraph appended | {{trg_spec_a_o}} ({{trg_spec_a_o_ci}}) | {{trg_spec_a_h}} ({{trg_spec_a_h_ci}}) |
+| long specific technical paragraph prepended | {{trg_spec_p_o}} ({{trg_spec_p_o_ci}}) | {{trg_spec_p_h}} ({{trg_spec_p_h_ci}}) |
+| paragraph of the same register appended | {{trg_peer_o}} ({{trg_peer_o_ci}}) | {{trg_peer_h}} ({{trg_peer_h_ci}}) |
+| names replaced by "the method" | {{trg_names_o}} ({{trg_names_o_ci}}) | {{trg_names_h}} ({{trg_names_h_ci}}) |
+| digits dropped | {{trg_dig_o}} ({{trg_dig_o_ci}}) | {{trg_dig_h}} ({{trg_dig_h_ci}}) |
+| evaluative words deleted | {{trg_eval_o}} ({{trg_eval_o_ci}}) | {{trg_eval_h}} ({{trg_eval_h_ci}}) |
+| control: real sentence appended | {{trg_ctl_a_o}} ({{trg_ctl_a_o_ci}}) | {{trg_ctl_a_h}} ({{trg_ctl_a_h_ci}}) |
+| control: real sentence prepended | {{trg_ctl_p_o}} ({{trg_ctl_p_o_ci}}) | {{trg_ctl_p_h}} ({{trg_ctl_p_h_ci}}) |
+
+A sentence in the style of a language model raises the score in either position, by {{trg_ai_a_o}} appended and {{trg_ai_p_o}} prepended to ours. A generic opener about an important and challenging problem raises ours by {{trg_mot_o}}. Digits are the clearest feature of our own text. Dropping them moves our paragraphs by {{trg_dig_o}}, replacing names with "the method" does nothing ({{trg_names_o}}), and the human paragraphs are not sensitive to digits ({{trg_dig_h}}). A neutral figure pointer moves ours by {{trg_ptr_a_o}}. A long, specific technical paragraph from a human paper moves ours most, by {{trg_spec_a_o}} appended and {{trg_spec_p_o}} prepended, and a paragraph of the same register does not ({{trg_peer_o}}). Single evaluative words hardly matter. Deleting them from human paragraphs moves the score by {{trg_eval_h}}, and an appended sentence on importance by {{trg_imp_h}}.
+
+The gradient of the score with respect to the input shows no single trigger word. In {{sal_n}} example paragraphs the top tenth of the words holds {{sal_min}} to {{sal_max}} of the positive attribution. The score looks like a measure of how much of a paragraph is generic exposition against specific technical detail, since a run of specifics dilutes it and generic framing or language-model phrasing adds to it. We tested this reading only with these edits.
+
 ## 4 Limitations
 
 The model is the open 3B one, and the detector that flagged the papers is another. We did not run the production model, so none of these effects is shown to carry over to it. Running it on the four papers costs about {{pass_cost}} dollars for each full pass at the listed API rate, and we did not spend it.
 
 We drafted the four papers with Claude Code, and Claude Code wrote the rewrites in this paper too. The author has not yet read the rewrites paragraph by paragraph. The open EditLens model scores a paragraph low when it sees little AI editing in it. We do not read the score as who wrote the paragraph.
 
-Table 1 changes one feature per edit. A real rewrite changes several at once. We have not run the test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs. That test would show whether their effects add up. All {{n_paras}} paragraphs come from the four papers of one author, on one SO-101 arm and one Jetson Orin NX. The five appended sentences are our own examples, and other wording could behave differently. The human reference is the first 40 results of one query, not a sample of the field, and its section types are rough because many headings were not recognised. Our own four PDFs give only {{hr_ours_paras}} scoreable paragraphs, so their section types are not compared. The style trial is {{tr_paras}} paragraphs from two papers, one round, with features we chose, so it shows that these edits did not help in that sample and does not rule them out.
+Table 1 changes one feature per edit. A real rewrite changes several at once. We have not run the test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs. That test would show whether their effects add up. All {{n_paras}} paragraphs come from the four papers of one author, on one SO-101 arm and one Jetson Orin NX. The five appended sentences are our own examples, and other wording could behave differently. The human reference is the first 40 results of one query, not a sample of the field, and its section types are rough because many headings were not recognised. Our own four PDFs give only {{hr_ours_paras}} scoreable paragraphs, so their section types are not compared. The trigger edits use one language-model-style sentence and one figure pointer that we wrote, so they show that these sentences move the score and not that every such sentence does. The style trial is {{tr_paras}} paragraphs from two papers, one round, with features we chose, so it shows that these edits did not help in that sample and does not rule them out.
 
 ## 5 Related work
 
@@ -137,7 +164,7 @@ EditLens [@thai2025editlens] introduces the continuous score and reports binary 
 
 ## 6 Conclusion
 
-Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score and the other three did not. A suspected feature should therefore be tested as an edit before it becomes a writing rule. Our four papers score above the human median, and our result paragraphs stayed above the median of human results paragraphs. Adding the style features of the human papers did not lower our scores. In our rewrites, paragraphs with named things and plain "we ran X on Y" sentences scored lower than paragraphs of procedure words. We have not tested whether the rest of the gap is content that only the author can add, such as the reasons for a decision.
+Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score and the other three did not. A suspected feature should therefore be tested as an edit before it becomes a writing rule. Our four papers score above the human median, and our result paragraphs stayed above the median of human results paragraphs. Adding the style features of the human papers did not lower our scores. In our rewrites, paragraphs with named things and plain "we ran X on Y" sentences scored lower than paragraphs of procedure words. Adding long specific technical text lowered the score most, and generic framing and language-model phrasing raised it. We have not tested whether the rest of the gap is content that only the author can add, such as the reasons for a decision.
 
 ## References
 

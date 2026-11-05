@@ -407,6 +407,18 @@
   "value": "21",
   "anchor": "repro/rewrite-loop/expected/before_after_rows.json reward-models-stopping-rule"
  },
+ "sal_max": {
+  "value": "70 %",
+  "anchor": "repro/triggers/expected/saliency_summary.json"
+ },
+ "sal_min": {
+  "value": "34 %",
+  "anchor": "repro/triggers/expected/saliency_summary.json"
+ },
+ "sal_n": {
+  "value": "9",
+  "anchor": "repro/triggers/expected/saliency_summary.json"
+ },
  "semi": {
   "value": "+0.047",
   "anchor": "repro/controlled-edits/expected/exp_insert.json effects.semicolon_join_pairs"
@@ -594,6 +606,246 @@
  "tr_rw_b": {
   "value": "0.194",
   "anchor": "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 0"
+ },
+ "trg_ai_a_h": {
+  "value": "+0.013",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_ai_phrase"
+ },
+ "trg_ai_a_h_ci": {
+  "value": "−0.000 to +0.024",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_ai_phrase.ci"
+ },
+ "trg_ai_a_o": {
+  "value": "+0.038",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_ai_phrase"
+ },
+ "trg_ai_a_o_ci": {
+  "value": "+0.028 to +0.049",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_ai_phrase.ci"
+ },
+ "trg_ai_p_h": {
+  "value": "+0.034",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_ai_phrase"
+ },
+ "trg_ai_p_h_ci": {
+  "value": "+0.027 to +0.042",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_ai_phrase.ci"
+ },
+ "trg_ai_p_o": {
+  "value": "+0.024",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_ai_phrase"
+ },
+ "trg_ai_p_o_ci": {
+  "value": "+0.014 to +0.035",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_ai_phrase.ci"
+ },
+ "trg_base_h": {
+  "value": "0.080",
+  "anchor": "repro/triggers/expected/trigger_summary.json"
+ },
+ "trg_base_o": {
+  "value": "0.201",
+  "anchor": "repro/triggers/expected/trigger_summary.json"
+ },
+ "trg_ctl_a_h": {
+  "value": "−0.025",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.ctl_append_real_sentence"
+ },
+ "trg_ctl_a_h_ci": {
+  "value": "−0.037 to −0.015",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.ctl_append_real_sentence.ci"
+ },
+ "trg_ctl_a_o": {
+  "value": "+0.002",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.ctl_append_real_sentence"
+ },
+ "trg_ctl_a_o_ci": {
+  "value": "−0.005 to +0.009",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.ctl_append_real_sentence.ci"
+ },
+ "trg_ctl_p_h": {
+  "value": "−0.014",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.ctl_prepend_real_sentence"
+ },
+ "trg_ctl_p_h_ci": {
+  "value": "−0.020 to −0.010",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.ctl_prepend_real_sentence.ci"
+ },
+ "trg_ctl_p_o": {
+  "value": "+0.005",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.ctl_prepend_real_sentence"
+ },
+ "trg_ctl_p_o_ci": {
+  "value": "−0.005 to +0.014",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.ctl_prepend_real_sentence.ci"
+ },
+ "trg_dig_h": {
+  "value": "+0.003",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.digits_only"
+ },
+ "trg_dig_h_ci": {
+  "value": "−0.003 to +0.010",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.digits_only.ci"
+ },
+ "trg_dig_o": {
+  "value": "−0.042",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.digits_only"
+ },
+ "trg_dig_o_ci": {
+  "value": "−0.057 to −0.030",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.digits_only.ci"
+ },
+ "trg_eval_h": {
+  "value": "−0.005",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.delete_evaluative_words"
+ },
+ "trg_eval_h_ci": {
+  "value": "−0.007 to −0.003",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.delete_evaluative_words.ci"
+ },
+ "trg_eval_o": {
+  "value": "+0.000",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.delete_evaluative_words"
+ },
+ "trg_eval_o_ci": {
+  "value": "+0.000 to +0.000",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.delete_evaluative_words.ci"
+ },
+ "trg_imp_h": {
+  "value": "−0.024",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_importance"
+ },
+ "trg_imp_h_ci": {
+  "value": "−0.035 to −0.015",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_importance.ci"
+ },
+ "trg_imp_o": {
+  "value": "−0.004",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_importance"
+ },
+ "trg_imp_o_ci": {
+  "value": "−0.010 to +0.003",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_importance.ci"
+ },
+ "trg_mot_h": {
+  "value": "+0.009",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_motivation"
+ },
+ "trg_mot_h_ci": {
+  "value": "+0.006 to +0.013",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_motivation.ci"
+ },
+ "trg_mot_o": {
+  "value": "+0.015",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_motivation"
+ },
+ "trg_mot_o_ci": {
+  "value": "+0.009 to +0.022",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_motivation.ci"
+ },
+ "trg_n_h": {
+  "value": "100",
+  "anchor": "repro/triggers/expected/trigger_summary.json"
+ },
+ "trg_n_o": {
+  "value": "62",
+  "anchor": "repro/triggers/expected/trigger_summary.json"
+ },
+ "trg_names_h": {
+  "value": "−0.006",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.names_only"
+ },
+ "trg_names_h_ci": {
+  "value": "−0.009 to −0.003",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.names_only.ci"
+ },
+ "trg_names_o": {
+  "value": "+0.003",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.names_only"
+ },
+ "trg_names_o_ci": {
+  "value": "−0.005 to +0.011",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.names_only.ci"
+ },
+ "trg_peer_h": {
+  "value": "−0.026",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_same_register_paragraph"
+ },
+ "trg_peer_h_ci": {
+  "value": "−0.041 to −0.012",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_same_register_paragraph.ci"
+ },
+ "trg_peer_o": {
+  "value": "−0.006",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_same_register_paragraph"
+ },
+ "trg_peer_o_ci": {
+  "value": "−0.022 to +0.009",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_same_register_paragraph.ci"
+ },
+ "trg_ptr_a_h": {
+  "value": "−0.037",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_pointer"
+ },
+ "trg_ptr_a_h_ci": {
+  "value": "−0.049 to −0.027",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_pointer.ci"
+ },
+ "trg_ptr_a_o": {
+  "value": "−0.041",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_pointer"
+ },
+ "trg_ptr_a_o_ci": {
+  "value": "−0.047 to −0.034",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_pointer.ci"
+ },
+ "trg_ptr_p_h": {
+  "value": "−0.023",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_pointer"
+ },
+ "trg_ptr_p_h_ci": {
+  "value": "−0.028 to −0.018",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_pointer.ci"
+ },
+ "trg_ptr_p_o": {
+  "value": "−0.059",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_pointer"
+ },
+ "trg_ptr_p_o_ci": {
+  "value": "−0.070 to −0.049",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_pointer.ci"
+ },
+ "trg_spec_a_h": {
+  "value": "−0.062",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_specific_paragraph"
+ },
+ "trg_spec_a_h_ci": {
+  "value": "−0.076 to −0.050",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.append_specific_paragraph.ci"
+ },
+ "trg_spec_a_o": {
+  "value": "−0.167",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_specific_paragraph"
+ },
+ "trg_spec_a_o_ci": {
+  "value": "−0.185 to −0.150",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.append_specific_paragraph.ci"
+ },
+ "trg_spec_p_h": {
+  "value": "−0.042",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_specific_paragraph"
+ },
+ "trg_spec_p_h_ci": {
+  "value": "−0.051 to −0.034",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.human_random.prepend_specific_paragraph.ci"
+ },
+ "trg_spec_p_o": {
+  "value": "−0.138",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_specific_paragraph"
+ },
+ "trg_spec_p_o_ci": {
+  "value": "−0.153 to −0.122",
+  "anchor": "repro/triggers/expected/trigger_summary.json effects.ours.prepend_specific_paragraph.ci"
  },
  "verdict": {
   "value": "−0.015",

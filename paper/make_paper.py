@@ -100,6 +100,18 @@ def collect():
     tl = [json.loads(x) for x in (R / "human-reference" / "expected" / "style_trials.jsonl").read_text().splitlines()]
     rw = {x["cand"]: x["score"] for x in tl if x["paper"] == "register-reproducibility" and x["para"] == 14}
     put("tr_rw_b", u(rw[0]), "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 0"); put("tr_rw_a", u(rw[1]), "repro/human-reference/expected/style_trials.jsonl register-reproducibility para 14 cand 1")
+    TR = J(R / "triggers" / "expected" / "trigger_summary.json"); SA = J(R / "triggers" / "expected" / "saliency_summary.json"); ta = "repro/triggers/expected/trigger_summary.json"
+    ab = {"ai_a": "append_ai_phrase", "ai_p": "prepend_ai_phrase", "mot": "prepend_motivation", "imp": "append_importance", "ptr_a": "append_pointer", "ptr_p": "prepend_pointer",
+          "spec_a": "append_specific_paragraph", "spec_p": "prepend_specific_paragraph", "peer": "append_same_register_paragraph", "names": "names_only", "dig": "digits_only",
+          "eval": "delete_evaluative_words", "ctl_a": "ctl_append_real_sentence", "ctl_p": "ctl_prepend_real_sentence"}
+    for k, key in ab.items():
+        for g, gk in (("o", "ours"), ("h", "human_random")):
+            e = TR["effects"][gk][key]; put(f"trg_{k}_{g}", s(e["mean"]), ta + f" effects.{gk}.{key}")
+            put(f"trg_{k}_{g}_ci", f"{s(e['ci'][0])} to {s(e['ci'][1])}", ta + f" effects.{gk}.{key}.ci")
+    put("trg_n_h", str(TR["hosts"]["human_random"]), ta); put("trg_n_o", str(TR["hosts"]["ours"]), ta)
+    put("trg_base_h", u(TR["base_mean"]["human_random"]), ta); put("trg_base_o", u(TR["base_mean"]["ours"]), ta)
+    sh = [v["top10pct_share_of_positive"] for v in SA.values()]; sa = "repro/triggers/expected/saliency_summary.json"
+    put("sal_n", str(len(sh)), sa); put("sal_min", f"{round(100 * min(sh))} %", sa); put("sal_max", f"{round(100 * max(sh))} %", sa)
 
 CITE = {"thai2025editlens": "Thai et al. 2025", "saha2025polish": "Saha and Feizi 2025", "krishna2023paraphrase": "Krishna et al. 2023",
         "cheng2025adversarial": "Cheng et al. 2025", "masrour2025damage": "Masrour et al. 2025"}
