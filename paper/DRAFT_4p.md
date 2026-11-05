@@ -10,7 +10,7 @@ Reading a score table suggests what to change in a text to lower its AI-edit sco
 
 Our four papers pass the slopscore and lmscan checks of the repository, and alphaXiv, which runs Pangram's detector, still flags them as AI-written. We wanted to know what in the text the detector reacts to, so that we could write the next paper without it.
 
-Our first answer came from a table of 469 sentences from the four papers. We compared the score contribution of each sentence with its features. Semicolons, contrast framing, advice, verdict words and colon set-ups went with higher scores, and "we", short sentences and citations went with lower ones. We wrote rules from this table (rule 78 of the writing rules in the repository). A feature that goes with a high score can travel with something else, such as a long list of numbers. This paper changes one feature at a time and scores the result.
+We first read a table of 469 sentences from the four papers and compared the score contribution of each sentence with its features. Semicolons, contrast framing, advice, verdict words and colon set-ups went with higher scores, and "we", short sentences and citations went with lower ones. From this table we wrote rule 78 of the writing rules in road-to-robotics. A feature that goes with a high score can travel with something else, such as a long list of numbers. This paper changes one feature at a time and scores the result.
 
 EditLens (Thai et al. 2025) takes a text and regresses how much an AI edited it, as a score between 0 and 1. Its authors trained it on pairs of a source text and an AI-edited version of it, from reviews, news, stories and web articles, edited with prompts such as "make it more descriptive" and "fix any mistakes". Our texts are experimental robotics papers, so we did not expect the same features to matter. The controlled edits below test that.
 
@@ -93,7 +93,7 @@ The model is the open 3B one, and the detector that flagged the papers is anothe
 
 We drafted the four papers with Claude Code, and Claude Code wrote the rewrites in this paper too. The author has not yet read the rewrites paragraph by paragraph. The open EditLens model scores a paragraph low when it sees little AI editing in it. We do not read the score as who wrote the paragraph.
 
-The edits in Table 1 change one feature each, and a real rewrite changes several together. A test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs would show whether their effects add up, and we have not run it. All 62 paragraphs come from the four papers of one author, written on one SO-101 arm and one Jetson Orin NX. We chose the five appended sentences ourselves, and other wording could behave differently.
+Table 1 changes one feature per edit. A real rewrite changes several at once. We have not run the test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs. That test would show whether their effects add up. All 62 paragraphs come from the four papers of one author, on one SO-101 arm and one Jetson Orin NX. The five appended sentences are our own examples, and other wording could behave differently.
 
 ## 5 Related work
 

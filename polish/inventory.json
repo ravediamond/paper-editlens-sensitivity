@@ -1,0 +1,104 @@
+[
+ {
+  "sec": "Abstract",
+  "words": 140,
+  "base": 0.1361,
+  "text": "Reading a score table suggests what to change in a text to lower its AI-edit score. We tested five such suggestions as controlled edits and three of them did not hold. We scored 62 paragraphs from four of our robotics papers with Pangram's open EditLens model. Joining two sentences with a semicolon raised the score of 92 % of the paragraphs, by +0.047 on average. Appending a short verdict sentence lowered it by 0.015, although verdict words had looked like a cause of high scores. Shuffling the sentences, changing \"we\" to \"I\" and appending a sentence of the same paper did nothing. Rewriting paragraphs against the sentence-level scores lowered the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. Pre-2022 human papers score 0.053 to 0.095, so none of the four reached that range."
+ },
+ {
+  "sec": "1 Introduction",
+  "words": 45,
+  "base": 0.1771,
+  "text": "Our four papers pass the slopscore and lmscan checks of the repository, and alphaXiv, which runs Pangram's detector, still flags them as AI-written. We wanted to know what in the text the detector reacts to, so that we could write the next paper without it."
+ },
+ {
+  "sec": "1 Introduction",
+  "words": 95,
+  "base": 0.3093,
+  "text": "Our first answer came from a table of 469 sentences from the four papers. We compared the score contribution of each sentence with its features. Semicolons, contrast framing, advice, verdict words and colon set-ups went with higher scores, and \"we\", short sentences and citations went with lower ones. We wrote rules from this table (rule 78 of the writing rules in the repository). A feature that goes with a high score can travel with something else, such as a long list of numbers. This paper changes one feature at a time and scores the result."
+ },
+ {
+  "sec": "1 Introduction",
+  "words": 77,
+  "base": 0.1366,
+  "text": "EditLens takes a text and regresses how much an AI edited it, as a score between 0 and 1. Its authors trained it on pairs of a source text and an AI-edited version of it, from reviews, news, stories and web articles, edited with prompts such as \"make it more descriptive\" and \"fix any mistakes\". Our texts are experimental robotics papers, so we did not expect the same features to matter. The controlled edits below test that."
+ },
+ {
+  "sec": "2 Setup",
+  "words": 51,
+  "base": 0.1115,
+  "text": "The scorer is X, the open model, on a Jetson Orin NX at 25 W. The production detector that flagged the papers is a different and stronger model, and we did not run it. The model is licensed for non-commercial use and we used it on our own four papers only."
+ },
+ {
+  "sec": "2 Setup",
+  "words": 93,
+  "base": 0.1953,
+  "text": "The texts are the rendered drafts of four papers: a register of re-tested robot-learning claims, a JEPA world model on a low-cost arm, reward models and a stopping rule, and chunking tricks for a VLA on an edge GPU. Citations are stripped and the model lower-cases its input. Paragraphs of at least 40 words are scored on their own, since shorter ones are noisy. There are 62 of them, in 469 sentences. As a human reference we scored three robot-learning papers from before November 2022. Their paper means are 0.053, 0.055 and 0.095."
+ },
+ {
+  "sec": "2 Setup",
+  "words": 66,
+  "base": 0.1164,
+  "text": "An edit changes one thing in every paragraph that contains it, and we report the mean change in the paragraph score with a 95 % bootstrap interval over paragraphs. An edit that changes only case and spacing gives exactly 0.000, because the model normalizes both. We removed semicolons and colons from the texts before this test, so for these two we could only test adding them."
+ },
+ {
+  "sec": "3.1 Controlled edits",
+  "words": 72,
+  "base": 0.1355,
+  "text": "The semicolon and the two closers raise the score, and the verdict sentence lowers it. Advice, the sentence about the rig, a real sentence of the same paper and the pronoun change do nothing, so adding length or changing the pronoun does not move the score. Shuffling does nothing either. Dropping the parentheticals, splitting at \"and\" and \"but\", and masking numbers lower the score. Keeping half of a paragraph lowers it most."
+ },
+ {
+  "sec": "3.2 What the earlier table got right",
+  "words": 60,
+  "base": 0.0646,
+  "text": "Two of five features held. The verdict result is the one we did not expect. In the papers a verdict word sits in sentences that also carry a number, a bar and a citation, which may be what raised the score in the table. We did not test that. A verdict sentence appended on its own does not raise it."
+ },
+ {
+  "sec": "3.3 The rewrite loop",
+  "words": 89,
+  "base": 0.1897,
+  "text": "We rewrote paragraphs from the highest-scoring sentences down. Each round scored a few candidate rewrites with the placeholders of the paper filled in, and kept the lowest one that preserved every number and claim. In the register paper one sentence moved to another paragraph and one that repeated another was dropped. There were 90 candidates in 50 paragraph-rounds. 50 of the candidates scored lower than the text they replaced, and the best candidate of a round improved the paragraph in 64 % of the rounds, by 0.032 on average."
+ },
+ {
+  "sec": "3.3 The rewrite loop",
+  "words": 57,
+  "base": 0.1806,
+  "text": "The largest single drops came from three changes, listed in Table 4. Merging sentences into longer ones with \"so\" or \"which means\" raised a limitations paragraph from 0.275 to 0.365 in the first variant, and the other two variants did the same. Paragraphs made of numbers, bars and verdicts stayed above the human range whatever we did."
+ },
+ {
+  "sec": "3.4 A lexicon of words",
+  "words": 125,
+  "base": 0.3348,
+  "text": "We also tried to turn the sentence scores into a list of words. A lexicon built on three papers predicts the sentence effects of the fourth with a correlation of 0.116, and the 95th percentile of shuffled labels is 0.096. Deleting single words in the 20 highest paragraphs (2,042 deletions) agrees in sign with the sentence source for 48 of 80 words. Only 19 words pass our strict test. Words that name a method for talking about itself (protocol, rule, committed, reports, CI) go with higher scores, and plain task words and units go with lower ones. The effect of one word is small, since the mean deletion changes a paragraph by +0.013 and the largest by 0.157. The list is a tie-breaker between synonyms."
+ },
+ {
+  "sec": "4 Limitations",
+  "words": 60,
+  "base": 0.0912,
+  "text": "The model is the open 3B one, and the detector that flagged the papers is another. We did not run the production model, so none of these effects is shown to carry over to it. Running it on the four papers costs about 3.2 dollars for each full pass at the listed API rate, and we did not spend it."
+ },
+ {
+  "sec": "4 Limitations",
+  "words": 56,
+  "base": 0.06,
+  "text": "We drafted the four papers with Claude Code, and Claude Code wrote the rewrites in this paper too. The author has not yet read the rewrites paragraph by paragraph. The open EditLens model scores a paragraph low when it sees little AI editing in it. We do not read the score as who wrote the paragraph."
+ },
+ {
+  "sec": "4 Limitations",
+  "words": 81,
+  "base": 0.379,
+  "text": "The edits in Table 1 change one feature each, and a real rewrite changes several together. A test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs would show whether their effects add up, and we have not run it. All 62 paragraphs come from the four papers of one author, written on one SO-101 arm and one Jetson Orin NX. We chose the five appended sentences ourselves, and other wording could behave differently."
+ },
+ {
+  "sec": "5 Related work",
+  "words": 112,
+  "base": 0.2584,
+  "text": "EditLens introduces the continuous score and reports binary and ternary detection results, and we use its open 3B model. Its authors state that the model has a non-zero error rate and can cause harm when used to accuse someone. The AI Polish study, which EditLens evaluates on, shows that binary detectors flag lightly polished text as AI. Work on paraphrasers and humanizers studies how they degrade the detection of AI text. We read only the descriptions of these in the EditLens paper and not the works themselves. We start from human-directed drafts of technical prose and ask which edits move an open model's score, and we report the edits that did nothing."
+ },
+ {
+  "sec": "6 Conclusion",
+  "words": 70,
+  "base": 0.2509,
+  "text": "Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score, and the other three did not, so test a suspected feature as an edit before it becomes a writing rule. In our rewrites, paragraphs with named things and plain \"we ran X on Y\" sentences scored lower than paragraphs of procedure words, and result paragraphs stayed above the human range."
+ }
+]
