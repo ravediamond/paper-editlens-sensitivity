@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Reading a score table suggests what to change in a text to lower its AI-edit score. We tested five such suggestions as controlled edits and three of them did not hold. We scored 62 paragraphs from four of our robotics papers with Pangram's open EditLens model. Joining two sentences with a semicolon raised the score of 92 % of the paragraphs, by +0.047 on average. Appending a short verdict sentence lowered it by 0.015, although verdict words had looked like a cause of high scores. Shuffling the sentences, changing "we" to "I" and appending a sentence of the same paper did nothing. Rewriting paragraphs against the sentence-level scores lowered the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.085, and 2 of our four papers still score above all of them. Adding the style features that go with low scores in those papers did not lower the score of 5 of 7 rewritten paragraphs.
+A correlation table of sentence scores suggests what to change in a text to lower its AI-edit score. We tested its five suggestions as controlled edits on 62 paragraphs of four of our robotics papers, scored with Pangram's open EditLens model, and three did not hold. Joining two sentences with a semicolon raised the score of 92 % of the paragraphs, by +0.047 on average, but an appended verdict sentence lowered it. Rewriting paragraphs against their sentence-level scores moved the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.085, and 2 of our four papers still score above all of them. Style features that go with low scores in the human papers did not lower the score of 5 of 7 paragraphs when we added them.
 
 ## 1 Introduction
 
@@ -13,6 +13,8 @@ Our four papers pass the slopscore and lmscan checks of the repository, and alph
 We first read a table of 469 sentences from the four papers and compared the score contribution of each sentence with its features. Semicolons, contrast framing, advice, verdict words and colon set-ups went with higher scores, and "we", short sentences and citations went with lower ones. From this table we wrote rule 78 of the writing rules in road-to-robotics. A feature that goes with a high score can travel with something else, such as a long list of numbers. This paper changes one feature at a time and scores the result.
 
 EditLens (Thai et al. 2025) takes a text and regresses how much an AI edited it, as a score between 0 and 1. Its authors trained it on pairs of a source text and an AI-edited version of it, from reviews, news, stories and web articles, edited with prompts such as "make it more descriptive" and "fix any mistakes". Our texts are experimental robotics papers, so we did not expect the same features to matter. The controlled edits below test that.
+
+A score also needs a scale. We therefore scored 39 human robot-learning papers from before November 2022 in the same way, and we tried to write our paragraphs in the style that those papers suggest.
 
 ## 2 Setup
 
@@ -135,7 +137,7 @@ EditLens (Thai et al. 2025) introduces the continuous score and reports binary a
 
 ## 6 Conclusion
 
-Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score, and the other three did not, so test a suspected feature as an edit before it becomes a writing rule. In our rewrites, paragraphs with named things and plain "we ran X on Y" sentences scored lower than paragraphs of procedure words, and result paragraphs stayed above the median of human results paragraphs, and features that go with low scores in human papers did not lower ours when added.
+Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score and the other three did not. A suspected feature should therefore be tested as an edit before it becomes a writing rule. Our four papers score above the human median, and our result paragraphs stayed above the median of human results paragraphs. Adding the style features of the human papers did not lower our scores. In our rewrites, paragraphs with named things and plain "we ran X on Y" sentences scored lower than paragraphs of procedure words. We have not tested whether the rest of the gap is content that only the author can add, such as the reasons for a decision.
 
 ## References
 
