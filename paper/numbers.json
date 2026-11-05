@@ -1,0 +1,394 @@
+{
+ "advice": {
+  "value": "+0.001",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_advice"
+ },
+ "advice_hi": {
+  "value": "+0.005",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_advice"
+ },
+ "advice_lo": {
+  "value": "−0.004",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_advice"
+ },
+ "advice_up": {
+  "value": "44",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_advice share_up x 100"
+ },
+ "c_advice": {
+  "value": "+0.021",
+  "anchor": "road-to-robotics journal/papers/ai-map/WRITING_RULES.md section K (311 sentences, ai_phrase_scores.json, 2026-11-05); read, not recomputed here"
+ },
+ "c_contrast": {
+  "value": "+0.029",
+  "anchor": "road-to-robotics journal/papers/ai-map/WRITING_RULES.md section K (311 sentences, ai_phrase_scores.json, 2026-11-05); read, not recomputed here"
+ },
+ "c_semi": {
+  "value": "+0.028",
+  "anchor": "road-to-robotics journal/papers/ai-map/WRITING_RULES.md section K (311 sentences, ai_phrase_scores.json, 2026-11-05); read, not recomputed here"
+ },
+ "c_verdict": {
+  "value": "+0.020",
+  "anchor": "road-to-robotics journal/papers/ai-map/WRITING_RULES.md section K (311 sentences, ai_phrase_scores.json, 2026-11-05); read, not recomputed here"
+ },
+ "c_we": {
+  "value": "−0.020",
+  "anchor": "road-to-robotics journal/papers/ai-map/WRITING_RULES.md section K (311 sentences, ai_phrase_scores.json, 2026-11-05); read, not recomputed here"
+ },
+ "classes_a": {
+  "value": "0.145",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 14 round r1 cand 1"
+ },
+ "classes_b": {
+  "value": "0.253",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 14 round r1 cand 0"
+ },
+ "closer": {
+  "value": "+0.017",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_generic_closer"
+ },
+ "closer_hi": {
+  "value": "+0.022",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_generic_closer"
+ },
+ "closer_lo": {
+  "value": "+0.012",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_generic_closer"
+ },
+ "closer_up": {
+  "value": "71",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_generic_closer share_up x 100"
+ },
+ "cold_a": {
+  "value": "0.139",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 11 round r3 cand 2"
+ },
+ "cold_b": {
+  "value": "0.253",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 11 round r1 cand 0"
+ },
+ "contrast": {
+  "value": "+0.011",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_contrast"
+ },
+ "contrast_hi": {
+  "value": "+0.017",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_contrast"
+ },
+ "contrast_lo": {
+  "value": "+0.006",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_contrast"
+ },
+ "contrast_up": {
+  "value": "61",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_contrast share_up x 100"
+ },
+ "first_half": {
+  "value": "−0.029",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.first_half_only"
+ },
+ "first_half_hi": {
+  "value": "−0.015",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.first_half_only"
+ },
+ "first_half_lo": {
+  "value": "−0.044",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.first_half_only"
+ },
+ "hum1": {
+  "value": "0.053",
+  "anchor": "road-to-robotics journal/papers/ai-map/2026-11-04/register-reproducibility/map.md, human reference (3 papers before 2022-11); read, not recomputed here"
+ },
+ "hum2": {
+  "value": "0.055",
+  "anchor": "road-to-robotics journal/papers/ai-map/2026-11-04/register-reproducibility/map.md, human reference (3 papers before 2022-11); read, not recomputed here"
+ },
+ "hum3": {
+  "value": "0.095",
+  "anchor": "road-to-robotics journal/papers/ai-map/2026-11-04/register-reproducibility/map.md, human reference (3 papers before 2022-11); read, not recomputed here"
+ },
+ "jepa_a": {
+  "value": "0.160",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json jepa-world-model"
+ },
+ "jepa_b": {
+  "value": "0.176",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json jepa-world-model"
+ },
+ "jepa_intro_a": {
+  "value": "0.164",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl jepa-world-model para 1 round r1 cand 1"
+ },
+ "jepa_intro_b": {
+  "value": "0.315",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl jepa-world-model para 1 round r1 cand 0"
+ },
+ "jepa_p": {
+  "value": "22",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json jepa-world-model"
+ },
+ "lex_corr": {
+  "value": "0.47",
+  "anchor": "repro/attribution/expected/lexicon.json validity.two_source_corr"
+ },
+ "lex_held": {
+  "value": "0.116",
+  "anchor": "repro/attribution/expected/lexicon.json validity.heldout_corr"
+ },
+ "lex_listed": {
+  "value": "19",
+  "anchor": "repro/attribution/expected/lexicon.json lower + raise"
+ },
+ "lex_null": {
+  "value": "0.096",
+  "anchor": "repro/attribution/expected/lexicon.json validity.null_p95"
+ },
+ "lex_same": {
+  "value": "48",
+  "anchor": "repro/attribution/expected/lexicon.json validity.two_source_same_sign"
+ },
+ "lex_words": {
+  "value": "80",
+  "anchor": "repro/attribution/expected/lexicon.json validity.two_source_words"
+ },
+ "mask_num": {
+  "value": "−0.021",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json numbers_masked (paragraphs the edit changes)"
+ },
+ "mask_num_hi": {
+  "value": "−0.012",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json numbers_masked (paragraphs the edit changes)"
+ },
+ "mask_num_lo": {
+  "value": "−0.030",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json numbers_masked (paragraphs the edit changes)"
+ },
+ "mask_num_n": {
+  "value": "55",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json numbers_masked (paragraphs the edit changes)"
+ },
+ "mean_best": {
+  "value": "0.032",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl via results.json iteration (sign dropped: a drop)"
+ },
+ "merge_a": {
+  "value": "0.365",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 16 round r2 cand 1"
+ },
+ "merge_b": {
+  "value": "0.275",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl register-reproducibility para 16 round r2 cand 0"
+ },
+ "n_cand": {
+  "value": "90",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl via results.json iteration"
+ },
+ "n_lower": {
+  "value": "50",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl via results.json iteration"
+ },
+ "n_paras": {
+  "value": "62",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json, paragraphs of 40 words or more"
+ },
+ "n_rounds": {
+  "value": "50",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl via results.json iteration"
+ },
+ "n_sent": {
+  "value": "469",
+  "anchor": "repro/attribution/expected/lexicon.json validity.sentences"
+ },
+ "null_edit": {
+  "value": "0.000",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.null_upper_ws"
+ },
+ "parens": {
+  "value": "−0.018",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json drop_parentheticals (paragraphs the edit changes)"
+ },
+ "parens_hi": {
+  "value": "−0.005",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json drop_parentheticals (paragraphs the edit changes)"
+ },
+ "parens_lo": {
+  "value": "−0.033",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json drop_parentheticals (paragraphs the edit changes)"
+ },
+ "parens_n": {
+  "value": "27",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json drop_parentheticals (paragraphs the edit changes)"
+ },
+ "pass_cost": {
+  "value": "3.2",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json, 6305 words of the four rendered drafts (paragraphs of 40 words or more) at the listed API rate of $0.05 per 100 words (pangram.com/pricing, read 2026-11-05)"
+ },
+ "realsent": {
+  "value": "+0.003",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_real_sentence_same_paper"
+ },
+ "realsent_hi": {
+  "value": "+0.011",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_real_sentence_same_paper"
+ },
+ "realsent_lo": {
+  "value": "−0.005",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_real_sentence_same_paper"
+ },
+ "realsent_up": {
+  "value": "42",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_real_sentence_same_paper share_up x 100"
+ },
+ "reg_a": {
+  "value": "0.153",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json register-reproducibility"
+ },
+ "reg_b": {
+  "value": "0.211",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json register-reproducibility"
+ },
+ "reg_p": {
+  "value": "23",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json register-reproducibility"
+ },
+ "rew_a": {
+  "value": "0.189",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json reward-models-stopping-rule"
+ },
+ "rew_b": {
+  "value": "0.202",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json reward-models-stopping-rule"
+ },
+ "rew_p": {
+  "value": "21",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json reward-models-stopping-rule"
+ },
+ "semi": {
+  "value": "+0.047",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.semicolon_join_pairs"
+ },
+ "semi_hi": {
+  "value": "+0.056",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.semicolon_join_pairs"
+ },
+ "semi_lo": {
+  "value": "+0.039",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.semicolon_join_pairs"
+ },
+ "semi_up": {
+  "value": "92",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.semicolon_join_pairs share_up x 100"
+ },
+ "share_impr": {
+  "value": "64",
+  "anchor": "repro/rewrite-loop/expected/iterlog.jsonl via results.json iteration"
+ },
+ "shuffle_a": {
+  "value": "+0.000",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.shuffle_a"
+ },
+ "shuffle_a_hi": {
+  "value": "+0.012",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.shuffle_a"
+ },
+ "shuffle_a_lo": {
+  "value": "−0.012",
+  "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.shuffle_a"
+ },
+ "split_and": {
+  "value": "−0.014",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
+ },
+ "split_and_hi": {
+  "value": "−0.007",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
+ },
+ "split_and_lo": {
+  "value": "−0.020",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
+ },
+ "split_and_n": {
+  "value": "28",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json split_at_and_but (paragraphs the edit changes)"
+ },
+ "verdict": {
+  "value": "−0.015",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict"
+ },
+ "verdict_abs": {
+  "value": "0.015",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict (sign dropped)"
+ },
+ "verdict_hi": {
+  "value": "−0.011",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict"
+ },
+ "verdict_lo": {
+  "value": "−0.020",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict"
+ },
+ "verdict_up": {
+  "value": "13",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_verdict share_up x 100"
+ },
+ "vla_a": {
+  "value": "0.207",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json vla-edge-inference"
+ },
+ "vla_b": {
+  "value": "0.233",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json vla-edge-inference"
+ },
+ "vla_p": {
+  "value": "18",
+  "anchor": "repro/rewrite-loop/expected/before_after_rows.json vla-edge-inference"
+ },
+ "wd_max": {
+  "value": "0.157",
+  "anchor": "repro/attribution/expected/word_deletion.json"
+ },
+ "wd_mean": {
+  "value": "+0.013",
+  "anchor": "repro/attribution/expected/word_deletion.json"
+ },
+ "wd_n": {
+  "value": "2,042",
+  "anchor": "repro/attribution/expected/word_deletion.json"
+ },
+ "wd_paras": {
+  "value": "20",
+  "anchor": "repro/attribution/scripts/words.py, paragraphs sorted by score, [:20]"
+ },
+ "we_to_i": {
+  "value": "+0.001",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json we_to_I (paragraphs the edit changes)"
+ },
+ "we_to_i_hi": {
+  "value": "+0.006",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json we_to_I (paragraphs the edit changes)"
+ },
+ "we_to_i_lo": {
+  "value": "−0.004",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json we_to_I (paragraphs the edit changes)"
+ },
+ "we_to_i_n": {
+  "value": "52",
+  "anchor": "repro/controlled-edits/expected/subset_effects.json we_to_I (paragraphs the edit changes)"
+ },
+ "weran": {
+  "value": "−0.001",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_we_ran"
+ },
+ "weran_hi": {
+  "value": "+0.004",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_we_ran"
+ },
+ "weran_lo": {
+  "value": "−0.007",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_we_ran"
+ },
+ "weran_up": {
+  "value": "42",
+  "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_we_ran share_up x 100"
+ }
+}
