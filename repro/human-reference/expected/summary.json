@@ -1,0 +1,61 @@
+{
+ "human_papers": 39,
+ "dropped": [
+  "2002.12360"
+ ],
+ "human_paragraphs": 1480,
+ "paper_mean_median": 0.08504967435310684,
+ "paper_mean_min": 0.04051855368144632,
+ "paper_mean_max": 0.12991552475247525,
+ "para_median": 0.06645000000000001,
+ "share_gt_015": 0.17027027027027028,
+ "share_gt_025": 0.04864864864864865,
+ "ours_paragraphs": 57,
+ "ours_means": {
+  "paper-jepa-world-model": 0.11879870996441279,
+  "paper-register-reproducibility": 0.17422122264675238,
+  "paper-reward-models-stopping-rule": 0.12685180616740088,
+  "paper-vla-edge-inference": 0.1523448834196891
+ },
+ "ours_above_human_max": 2,
+ "ours_above_median": 4,
+ "ours_share_gt_015": 0.543859649122807,
+ "types": {
+  "introduction": {
+   "n": 167,
+   "median": 0.0529,
+   "p90": 0.1772,
+   "share_gt_015": 0.16766467065868262
+  },
+  "related": {
+   "n": 114,
+   "median": 0.063,
+   "p90": 0.1535,
+   "share_gt_015": 0.12280701754385964
+  },
+  "method": {
+   "n": 134,
+   "median": 0.07289999999999999,
+   "p90": 0.174,
+   "share_gt_015": 0.17164179104477612
+  },
+  "results": {
+   "n": 147,
+   "median": 0.0463,
+   "p90": 0.172,
+   "share_gt_015": 0.12244897959183673
+  },
+  "conclusion": {
+   "n": 120,
+   "median": 0.052750000000000005,
+   "p90": 0.1663,
+   "share_gt_015": 0.125
+  },
+  "other": {
+   "n": 758,
+   "median": 0.07275000000000001,
+   "p90": 0.1972,
+   "share_gt_015": 0.18337730870712401
+  }
+ }
+}

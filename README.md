@@ -10,6 +10,7 @@ The scorer is the open model, not the production Pangram detector, and the texts
 - `repro/controlled-edits/`: the 62 paragraphs, the per-paragraph score change of every edit, the L0 check.
 - `repro/rewrite-loop/`: every scored candidate rewrite (`iterlog.jsonl`), the per-paragraph scores of the four papers before and after, the original and final paper sources, the L0 check, `RESULTS.md`.
 - `repro/attribution/`: sentence leave-one-out and word-deletion scores, the lexicon, the L0 check, `EDITLENS_LEXICON.md`.
+- `repro/human-reference/`: 39 human robot-learning papers from before November 2022 (the first 40 results of an arXiv query, rule fixed before scoring), scored by section with the same PDF extractor as our own four PDFs; arXiv ids, scores and hashes, no text; the L0 check.
 - `PROVENANCE.md`: where every file was copied from.
 
 ## Reproduce

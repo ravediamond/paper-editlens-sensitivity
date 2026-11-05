@@ -95,6 +95,146 @@
   "value": "−0.044",
   "anchor": "repro/controlled-edits/expected/exp_transforms.json effects.first_half_only"
  },
+ "hr_conc_med": {
+  "value": "0.053",
+  "anchor": "repro/human-reference/expected/summary.json types.conclusion"
+ },
+ "hr_conc_n": {
+  "value": "120",
+  "anchor": "repro/human-reference/expected/summary.json types.conclusion"
+ },
+ "hr_conc_p90": {
+  "value": "0.166",
+  "anchor": "repro/human-reference/expected/summary.json types.conclusion"
+ },
+ "hr_dropped": {
+  "value": "1",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_gt15": {
+  "value": "17",
+  "anchor": "repro/human-reference/expected/summary.json share_gt_015 x 100"
+ },
+ "hr_gt25": {
+  "value": "5",
+  "anchor": "repro/human-reference/expected/summary.json share_gt_025 x 100"
+ },
+ "hr_intro_med": {
+  "value": "0.053",
+  "anchor": "repro/human-reference/expected/summary.json types.introduction"
+ },
+ "hr_intro_n": {
+  "value": "167",
+  "anchor": "repro/human-reference/expected/summary.json types.introduction"
+ },
+ "hr_intro_p90": {
+  "value": "0.177",
+  "anchor": "repro/human-reference/expected/summary.json types.introduction"
+ },
+ "hr_max": {
+  "value": "0.130",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_med": {
+  "value": "0.085",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_meth_med": {
+  "value": "0.073",
+  "anchor": "repro/human-reference/expected/summary.json types.method"
+ },
+ "hr_meth_n": {
+  "value": "134",
+  "anchor": "repro/human-reference/expected/summary.json types.method"
+ },
+ "hr_meth_p90": {
+  "value": "0.174",
+  "anchor": "repro/human-reference/expected/summary.json types.method"
+ },
+ "hr_min": {
+  "value": "0.041",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_n": {
+  "value": "39",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_oth_med": {
+  "value": "0.073",
+  "anchor": "repro/human-reference/expected/summary.json types.other"
+ },
+ "hr_oth_n": {
+  "value": "758",
+  "anchor": "repro/human-reference/expected/summary.json types.other"
+ },
+ "hr_oth_p90": {
+  "value": "0.197",
+  "anchor": "repro/human-reference/expected/summary.json types.other"
+ },
+ "hr_ours_above": {
+  "value": "2",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_ours_all": {
+  "value": "4",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_ours_gt15": {
+  "value": "54",
+  "anchor": "repro/human-reference/expected/summary.json ours_share_gt_015 x 100"
+ },
+ "hr_ours_jepa": {
+  "value": "0.119",
+  "anchor": "repro/human-reference/expected/summary.json ours_means.paper-jepa-world-model"
+ },
+ "hr_ours_paras": {
+  "value": "57",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_ours_reg": {
+  "value": "0.174",
+  "anchor": "repro/human-reference/expected/summary.json ours_means.paper-register-reproducibility"
+ },
+ "hr_ours_rew": {
+  "value": "0.127",
+  "anchor": "repro/human-reference/expected/summary.json ours_means.paper-reward-models-stopping-rule"
+ },
+ "hr_ours_vla": {
+  "value": "0.152",
+  "anchor": "repro/human-reference/expected/summary.json ours_means.paper-vla-edge-inference"
+ },
+ "hr_para_med": {
+  "value": "0.066",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_paras": {
+  "value": "1,480",
+  "anchor": "repro/human-reference/expected/summary.json"
+ },
+ "hr_rel_med": {
+  "value": "0.063",
+  "anchor": "repro/human-reference/expected/summary.json types.related"
+ },
+ "hr_rel_n": {
+  "value": "114",
+  "anchor": "repro/human-reference/expected/summary.json types.related"
+ },
+ "hr_rel_p90": {
+  "value": "0.153",
+  "anchor": "repro/human-reference/expected/summary.json types.related"
+ },
+ "hr_res_med": {
+  "value": "0.046",
+  "anchor": "repro/human-reference/expected/summary.json types.results"
+ },
+ "hr_res_n": {
+  "value": "147",
+  "anchor": "repro/human-reference/expected/summary.json types.results"
+ },
+ "hr_res_p90": {
+  "value": "0.172",
+  "anchor": "repro/human-reference/expected/summary.json types.results"
+ },
  "hum1": {
   "value": "0.053",
   "anchor": "road-to-robotics journal/papers/ai-map/2026-11-04/register-reproducibility/map.md, human reference (3 papers before 2022-11); read, not recomputed here"

@@ -78,3 +78,12 @@ Every file with its source. `derived` = generated or written for this repository
 | `repro/rewrite-loop/sources/reward-models-stopping-rule.src.md` | road-to-robotics | 5bf8b8fecd | `journal/papers/ai-map/2026-11-05_rewrite/sources/reward-models-stopping-rule.src.md` | 9a32919ef6e4 |
 | `repro/rewrite-loop/sources/vla-edge-inference.orig.md` | road-to-robotics | 5bf8b8fecd | `journal/papers/ai-map/2026-11-05_rewrite/sources/vla-edge-inference.orig.md` | 18824eabdd0a |
 | `repro/rewrite-loop/sources/vla-edge-inference.src.md` | road-to-robotics | 5bf8b8fecd | `journal/papers/ai-map/2026-11-05_rewrite/sources/vla-edge-inference.src.md` | bc5330459cf5 |
+| `repro/human-reference/PROTOCOL.md` | derived | | derived: written for this repository | be045d5dc0d1 |
+| `repro/human-reference/README.md` | derived | | derived: written for this repository | 0c5ff58e1d71 |
+| `repro/human-reference/REPRODUCE.md` | derived | | derived: written for this repository | eb65d19608a6 |
+| `repro/human-reference/l0_check.py` | derived | | derived: written for this repository | ba4aec74a7a1 |
+| `repro/human-reference/scripts/score_pdfs.py` | derived | | derived: written for this repository | 50bcfceb45ab |
+| `repro/human-reference/expected/rows.json` | derived | | derived: scripts/score_pdfs.py, 2026-11-05 | 6639577b9e4c |
+| `repro/human-reference/expected/rows_v1_extractor.json` | derived | | derived: first run with the road-to-robotics pdf_sections extractor (scores reused by hash) | cc445f838e32 |
+| `repro/human-reference/expected/summary.json` | derived | | derived: l0_check.py --write | bfe1612febec |
+| `repro/human-reference/expected/selected.json` | derived | | derived: arXiv API result list of 2026-11-05 (first 40 pre-2022 results) | ebe022aba417 |
