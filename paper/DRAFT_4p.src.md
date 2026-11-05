@@ -6,7 +6,7 @@
 
 Reading a score table suggests what to change in a text to lower its AI-edit score. We tested five such suggestions as controlled edits and three of them did not hold. We scored {{n_paras}} paragraphs from four of our robotics papers with Pangram's open EditLens model. Joining two sentences with a semicolon raised the score of {{semi_up}} % of the paragraphs, by {{semi}} on average. Appending a short verdict sentence lowered it by {{verdict_abs}}, although verdict words had looked like a cause of high scores. Shuffling the sentences, changing "we" to "I" and appending a sentence of the same paper did nothing. Rewriting paragraphs against the sentence-level scores lowered the four paper means from {{reg_b}}, {{jepa_b}}, {{rew_b}} and {{vla_b}} to {{reg_a}}, {{jepa_a}}, {{rew_a}} and {{vla_a}}. Pre-2022 human papers score {{hum1}} to {{hum3}}, so none of the four reached that range.
 
-## 1. Introduction
+## 1 Introduction
 
 Our four papers pass the slopscore and lmscan checks of the repository, and alphaXiv, which runs Pangram's detector, still flags them as AI-written. We wanted to know what in the text the detector reacts to, so that we could write the next paper without it.
 
@@ -14,7 +14,7 @@ Our first answer came from a table of {{n_sent}} sentences from the four papers.
 
 EditLens [@thai2025editlens] takes a text and regresses how much an AI edited it, as a score between 0 and 1. Its authors trained it on pairs of a source text and an AI-edited version of it, from reviews, news, stories and web articles, edited with prompts such as "make it more descriptive" and "fix any mistakes". Our texts are experimental robotics papers, so we did not expect the same features to matter. The controlled edits below test that.
 
-## 2. Setup
+## 2 Setup
 
 The scorer is `pangram/editlens_Llama-3.2-3B`, the open model, on a Jetson Orin NX at 25 W. The production detector that flagged the papers is a different and stronger model, and we did not run it. The model is licensed for non-commercial use and we used it on our own four papers only.
 
@@ -22,7 +22,7 @@ The texts are the rendered drafts of four papers: a register of re-tested robot-
 
 An edit changes one thing in every paragraph that contains it, and we report the mean change in the paragraph score with a 95 % bootstrap interval over paragraphs. An edit that changes only case and spacing gives exactly {{null_edit}}, because the model normalizes both. We removed semicolons and colons from the texts before this test, so for these two we could only test adding them.
 
-## 3. Results
+## 3 Results
 
 ### 3.1 Controlled edits
 
@@ -87,7 +87,7 @@ Table 4: The three largest drops in one paragraph, by the change that caused the
 
 We also tried to turn the sentence scores into a list of words. A lexicon built on three papers predicts the sentence effects of the fourth with a correlation of {{lex_held}}, and the 95th percentile of shuffled labels is {{lex_null}}. Deleting single words in the {{wd_paras}} highest paragraphs ({{wd_n}} deletions) agrees in sign with the sentence source for {{lex_same}} of {{lex_words}} words. Only {{lex_listed}} words pass our strict test. Words that name a method for talking about itself (protocol, rule, committed, reports, CI) go with higher scores, and plain task words and units go with lower ones. The effect of one word is small, since the mean deletion changes a paragraph by {{wd_mean}} and the largest by {{wd_max}}. The list is a tie-breaker between synonyms.
 
-## 4. Limitations
+## 4 Limitations
 
 The model is the open 3B one, and the detector that flagged the papers is another. We did not run the production model, so none of these effects is shown to carry over to it. Running it on the four papers costs about {{pass_cost}} dollars for each full pass at the listed API rate, and we did not spend it.
 
@@ -95,11 +95,11 @@ We drafted the four papers with Claude Code, and Claude Code wrote the rewrites 
 
 The edits in Table 1 change one feature each, and a real rewrite changes several together. A test that applies the rewrite moves of Section 3.3 one at a time to the same paragraphs would show whether their effects add up, and we have not run it. All {{n_paras}} paragraphs come from the four papers of one author, written on one SO-101 arm and one Jetson Orin NX. We chose the five appended sentences ourselves, and other wording could behave differently.
 
-## 5. Related work
+## 5 Related work
 
 EditLens [@thai2025editlens] introduces the continuous score and reports binary and ternary detection results, and we use its open 3B model. Its authors state that the model has a non-zero error rate and can cause harm when used to accuse someone. The AI Polish study [@saha2025polish], which EditLens evaluates on, shows that binary detectors flag lightly polished text as AI. Work on paraphrasers and humanizers [@krishna2023paraphrase; @cheng2025adversarial; @masrour2025damage] studies how they degrade the detection of AI text. We read only the descriptions of these in the EditLens paper and not the works themselves. We start from human-directed drafts of technical prose and ask which edits move an open model's score, and we report the edits that did nothing.
 
-## 6. Conclusion
+## 6 Conclusion
 
 Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score, and the other three did not, so test a suspected feature as an edit before it becomes a writing rule. In our rewrites, paragraphs with named things and plain "we ran X on Y" sentences scored lower than paragraphs of procedure words, and result paragraphs stayed above the human range.
 

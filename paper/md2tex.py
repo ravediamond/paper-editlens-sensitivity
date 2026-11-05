@@ -20,11 +20,12 @@ def esc(x):
     x = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", x, flags=re.S)
     x = re.sub(r"(?<!\*)\*([^*\n]+)\*", r"\\emph{\1}", x)
     x = re.sub(r"`(.+?)`", r"\\texttt{\1}", x)
+    x = re.sub(r'"([^"]*)"', r"``\1''", x)
     return re.sub(r"\{\{([^}]*)\}\}", lambda m: "{{" + m.group(1).replace(r"\_", "_") + "}}", x)
 
 
 RP = r">{\raggedright\arraybackslash}p"  # ragged cells: long file names must not overflow the column
-COLSPEC = {3: ("table", RP + "{3.5cm}" + RP + "{1.9cm}" + RP + "{2.8cm}"),
+COLSPEC = {3: ("table", RP + "{3.1cm}" + RP + "{1.4cm}" + RP + "{3.5cm}"),
            4: ("table", RP + "{3.3cm}" + RP + "{1.9cm}" + RP + "{1.4cm}" + RP + "{1.4cm}")}
 
 
@@ -68,6 +69,8 @@ def convert(block_lines):
                 i += 1
             out += table(rows, cap); cap = ""
             continue
+        elif l.startswith("### "):
+            h = l[4:]; out += "\\subsection{" + esc(h.split(" ", 1)[1] if h.split(" ", 1)[0].replace(".", "").isdigit() else h) + "}\n"
         elif m := re.match(r"!\[(.*)\]\((.*)\)", l):
             out += ("\\begin{figure}[t]\\centering\\includegraphics[width=\\columnwidth]{%s}\\caption{%s}\\end{figure}\n\n"
                     % (m.group(2).replace(".png", ".pdf"), esc(m.group(1))))
