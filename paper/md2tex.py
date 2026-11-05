@@ -102,7 +102,7 @@ TPL = r"""\documentclass[10pt,twocolumn]{article}
 \usepackage[numbers]{natbib}
 \usepackage{style/shisso}
 \shissorepo{github.com/ravediamond/paper-editlens-sensitivity}
-\title{What moves an open AI-edit detector on technical prose: edits to four robotics papers, tested one at a time}
+\title{What moves an open AI-edit detector on technical prose: controlled edits, one feature at a time}
 \author{Ravindu Somawansa\\Shisso Robotics, Paris\\\texttt{ravindu.somawansa@shissorobotics.com}\thanks{Code, result files and the checks that regenerate every number: \texttt{github.com/ravediamond/paper-editlens-sensitivity}. The texts under test belong to four other papers of the author; their rewrite history is in \texttt{repro/rewrite-loop/}.}}
 \date{}
 \begin{document}

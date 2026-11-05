@@ -1,4 +1,4 @@
-# What moves an open AI-edit detector on technical prose: edits to four robotics papers, tested one at a time
+# What moves an open AI-edit detector on technical prose: controlled edits, one feature at a time
 
 *Ravindu Somawansa, Shisso Robotics, Paris. Draft, not submitted. Every number is a placeholder filled from `numbers.json` by `make_paper.py`, and `numbers.json` names the file each value comes from. The drafts under test and the rewrites were produced with an AI assistant (Claude Code).*
 
