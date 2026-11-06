@@ -6,13 +6,9 @@
 \usepackage{style/shisso}
 \shissorepo{github.com/ravediamond/paper-editlens-sensitivity}
 \title{What moves an open AI-edit detector on technical prose: controlled edits, one feature at a time}
-\author{Ravindu Somawansa\\Shisso Robotics, Paris\\\texttt{ravindu.somawansa@shissorobotics.com}\thanks{Code, result files and the checks that regenerate every number: \texttt{github.com/ravediamond/paper-editlens-sensitivity}. The texts under test belong to four other papers of the author; their rewrite history is in \texttt{repro/rewrite-loop/}.}}
 \date{}
 \begin{document}
-\maketitle
-\begin{abstract}
-A correlation table of sentence scores suggests what to change in a text to lower its AI-edit score. We tested its five suggestions as controlled edits on 62 paragraphs of four of our robotics papers, scored with Pangram's open EditLens model, and three did not hold. Joining two sentences with a semicolon raised the score of 92 \% of the paragraphs, by +0.047 on average, but an appended verdict sentence lowered it. Rewriting paragraphs against their sentence-level scores moved the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.071, and 4 of our four papers still score above all of them. Style features that go with low scores in the human papers did not lower the score of 5 of 7 paragraphs when we added them.
-\end{abstract}
+\twocolumn[\vspace*{0.32in}\shissopanel{What moves an open AI-edit detector on technical prose: controlled edits, one feature at a time}{Ravindu Somawansa\\[1pt]Shisso Robotics, Paris\\[1pt]\texttt{ravindu.somawansa@shissorobotics.com}}{A correlation table of sentence scores suggests what to change in a text to lower its AI-edit score. We tested its five suggestions as controlled edits on 62 paragraphs of four of our robotics papers, scored with Pangram's open EditLens model, and three did not hold. Joining two sentences with a semicolon raised the score of 92 \% of the paragraphs, by +0.047 on average, but an appended verdict sentence lowered it. Rewriting paragraphs against their sentence-level scores moved the four paper means from 0.211, 0.176, 0.202 and 0.233 to 0.153, 0.160, 0.189 and 0.207. In 39 human robot-learning papers from before November 2022 the paper means have a median of 0.071, and 4 of our four papers still score above all of them. Style features that go with low scores in the human papers did not lower the score of 5 of 7 paragraphs when we added them.}{\textbf{Code and rows:} \texttt{github.com/ravediamond/paper-editlens-sensitivity}\quad\textbf{Reproduce:} \texttt{make check}. Every number carries its source file.}\vspace{4pt}]
 \section{Introduction}
 Our four papers pass the slopscore and lmscan checks of the repository, and alphaXiv, which runs Pangram's detector, still flags them as AI-written. We wanted to know what in the text the detector reacts to, so that we could write the next paper without it.
 
@@ -221,7 +217,9 @@ Table 1 changes one feature per edit. A real rewrite changes several at once. We
 EditLens \citep{thai2025editlens} introduces the continuous score and reports binary and ternary detection results, and we use its open 3B model. Its authors state that the model has a non-zero error rate and can cause harm when used to accuse someone. The AI Polish study \citep{saha2025polish}, which EditLens evaluates on, shows that binary detectors flag lightly polished text as AI. Work on paraphrasers and humanizers \citep{krishna2023paraphrase,cheng2025adversarial,masrour2025damage} studies how they degrade the detection of AI text. We read only the descriptions of these in the EditLens paper and not the works themselves. We start from human-directed drafts of technical prose and ask which edits move an open model's score, and we report the edits that did nothing.
 
 \section{Conclusion}
+\begin{shissofinding}[Conclusion.]
 Of the five features we had read off a correlation table, a semicolon and a contrast closer raised the score and the other three did not. A suspected feature should therefore be tested as an edit before it becomes a writing rule. Our four papers score above the human median, and our result paragraphs stayed above the median of human results paragraphs. Adding the style features of the human papers did not lower our scores. In our rewrites, paragraphs with named things and plain ``we ran X on Y'' sentences scored lower than paragraphs of procedure words. Adding long specific technical text lowered the score most, and generic framing and language-model phrasing raised it. We have not tested whether the rest of the gap is content that only the author can add, such as the reasons for a decision.
+\end{shissofinding}
 \bibliographystyle{plainnat}
 \bibliography{refs}
 
