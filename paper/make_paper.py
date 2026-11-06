@@ -11,6 +11,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 R = HERE.parent / "repro"
 CE, RL, AT = R / "controlled-edits" / "expected", R / "rewrite-loop" / "expected", R / "attribution" / "expected"
+AD = R / "additivity" / "expected"
 N, A = {}, {}
 
 
@@ -34,6 +35,12 @@ def collect():
     T, I, S = J(CE / "exp_transforms.json"), J(CE / "exp_insert.json"), J(CE / "subset_effects.json")
     res, ctr = "repro/rewrite-loop/expected/results.json", "repro/controlled-edits/expected/"
     LX, WD, BA = J(AT / "lexicon.json"), J(AT / "word_deletion.json"), J(RL / "before_after_rows.json")
+    AS = J(AD / "additivity_summary.json"); ad = "repro/additivity/expected/additivity_summary.json "
+    for k, key, d in [("add_paras", "paragraphs", None), ("add_hunks", "hunks", None), ("add_multi", "multi", None), ("add_single", "single", None)]:
+        put(k, str(AS[key]), ad + key)
+    put("add_D", s(AS["mean_D"]), ad + "mean_D (paragraphs with two or more hunks)"); put("add_S", s(AS["mean_S"]), ad + "mean_S")
+    put("add_r", f"{AS['pearson']:.2f}", ad + "pearson"); put("add_rho", f"{AS['spearman']:.2f}", ad + "spearman"); put("add_resid", s(AS["mean_abs_resid"]), ad + "mean_abs_resid")
+    put("add_replace", str(AS["by_type"]["replace"]["n"]), ad + "by_type/replace/n")
     put("n_paras", str(len(T["paras"])), ctr + "exp_transforms.json, paragraphs of 40 words or more")
     put("n_sent", str(LX["validity"]["sentences"]), "repro/attribution/expected/lexicon.json validity.sentences")
     for k, a in [("shuffle_a", "shuffle_a"), ("first_half", "first_half_only")]:

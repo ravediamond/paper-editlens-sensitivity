@@ -1,4 +1,44 @@
 {
+ "add_D": {
+  "value": "−0.063",
+  "anchor": "repro/additivity/expected/additivity_summary.json mean_D (paragraphs with two or more hunks)"
+ },
+ "add_S": {
+  "value": "−0.067",
+  "anchor": "repro/additivity/expected/additivity_summary.json mean_S"
+ },
+ "add_hunks": {
+  "value": "46",
+  "anchor": "repro/additivity/expected/additivity_summary.json hunks"
+ },
+ "add_multi": {
+  "value": "14",
+  "anchor": "repro/additivity/expected/additivity_summary.json multi"
+ },
+ "add_paras": {
+  "value": "26",
+  "anchor": "repro/additivity/expected/additivity_summary.json paragraphs"
+ },
+ "add_r": {
+  "value": "0.94",
+  "anchor": "repro/additivity/expected/additivity_summary.json pearson"
+ },
+ "add_replace": {
+  "value": "45",
+  "anchor": "repro/additivity/expected/additivity_summary.json by_type/replace/n"
+ },
+ "add_resid": {
+  "value": "+0.010",
+  "anchor": "repro/additivity/expected/additivity_summary.json mean_abs_resid"
+ },
+ "add_rho": {
+  "value": "0.86",
+  "anchor": "repro/additivity/expected/additivity_summary.json spearman"
+ },
+ "add_single": {
+  "value": "12",
+  "anchor": "repro/additivity/expected/additivity_summary.json single"
+ },
  "advice": {
   "value": "+0.001",
   "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_advice"
