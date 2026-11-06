@@ -1,0 +1,10 @@
+# Additivity of the rewrite moves (exploratory, 2026-11-06)
+
+Not pre-registered: no bar, descriptive. The question was left open by the first version of the paper: a real rewrite changes several things at once, so do the effects of its changes add up? Written and committed before any score of this run.
+
+- **Texts.** The paragraphs of `repro/rewrite-loop/expected/before_after_rows.json` whose text changed between `before_text` and `after_text` (26 of 84), placeholders filled, citations stripped, as in the rewrite loop.
+- **Moves.** Each text is split into sentences with `paper_sentences.split_sentences` of the working repository (the splitter the loop used). `difflib.SequenceMatcher` (`autojunk=False`) on the two sentence lists gives the hunks of the rewrite. A hunk is a *delete* (sentences only in the original), an *insert* (only in the rewrite) or a *replace* (both: a reworded, merged or split sentence). A sentence moved to another place is a delete and an insert.
+- **Variants.** The original paragraph with exactly one hunk applied. The scorer is `pangram/editlens_Llama-3.2-3B`, each variant as a text of its own, as before.
+- **Outcome.** D = score(rewrite) - score(original). For each hunk, d = score(variant) - score(original). S = sum of the d of the paragraph.
+- **Reported.** The number of paragraphs with at least two hunks. The mean of D and of S over those paragraphs, the Pearson and Spearman correlation of S with D, and the mean of |D - S|. The mean d by hunk type with a 95 % bootstrap CI (2,000 resamples, `numpy.random.default_rng(0)`, paragraphs as the unit). The share of paragraphs where the hunk with the largest |d| has the sign of D. Paragraphs with one hunk are counted and left out of the correlation.
+- **Known limit.** Hunks are a sentence-level view of a rewrite whose words changed inside sentences too, and a *replace* hunk can bundle several moves of the loop (name the works, split a list). The test says whether sentence-level changes add up, not whether each named move does.
