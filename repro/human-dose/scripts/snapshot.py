@@ -2,7 +2,7 @@
 """Freeze the baselines and collect every later version of every paragraph of the four papers.
 
     snapshot.py --freeze        record HEAD of each paper repo as its baseline (expected/baseline.json); refuses to overwrite
-    snapshot.py                 walk master since the baseline; write expected/versions.json
+    snapshot.py                 walk the default branch since the baseline; write expected/versions.json
 
 versions.json: {paper: {"baseline": [{"id", "text", "words"}], "versions": [{"commit", "date", "subject", "override", "text", "words"}]}}
 A version is a distinct paragraph text (sha) not present in the baseline; identical texts across commits count once (first commit kept).
@@ -35,7 +35,7 @@ def collect():
         bparas = paragraphs(show(repo, b))
         seen = {sha(t) for t in bparas}
         entry = {"baseline": [{"id": sha(t), "text": t, "words": nwords(t)} for t in bparas], "versions": []}
-        log = git(repo, "log", "--reverse", "--format=%H%x1f%cI%x1f%an%x1f%s", f"{b}..master", "--", DRAFT).strip()
+        log = git(repo, "log", "--reverse", "--format=%H%x1f%cI%x1f%an%x1f%s", f"{b}..HEAD", "--", DRAFT).strip()
         for line in filter(None, log.split("\n")):
             commit, date, author, subject = line.split("\x1f")
             if "[polish]" in subject or author != OWNER:
