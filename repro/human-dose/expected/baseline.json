@@ -1,0 +1,22 @@
+{
+ "paper-register-reproducibility": {
+  "commit": "781586d2d3b41f8632d73015b737cecbc4acf544",
+  "date": "2026-11-06T12:24:34+01:00",
+  "paragraphs": 13
+ },
+ "paper-jepa-world-model": {
+  "commit": "6559e84933262956cc7a601adf62960b6304ec7a",
+  "date": "2026-11-06T10:31:46+01:00",
+  "paragraphs": 26
+ },
+ "paper-reward-models-stopping-rule": {
+  "commit": "7389b947b0651ab83bda3d297e6eccfb974bdd4c",
+  "date": "2026-11-06T09:47:48+01:00",
+  "paragraphs": 14
+ },
+ "paper-vla-edge-inference": {
+  "commit": "1a2d28bcb378e6c740f0d12068930525c8878c7a",
+  "date": "2026-11-06T09:44:57+01:00",
+  "paragraphs": 12
+ }
+}
