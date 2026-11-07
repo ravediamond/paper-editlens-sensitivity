@@ -19,7 +19,8 @@ def freeze():
     base = {}
     for p in PAPERS:
         repo = REPOS / p
-        head = git(repo, "rev-parse", "HEAD").strip()
+        pin = next((a.split("=", 1)[1] for a in sys.argv if a.startswith(f"--{p.split('paper-', 1)[-1]}=")), None)
+        head = git(repo, "rev-parse", pin or "HEAD").strip()  # --<paper-suffix>=<commit> pins a baseline (CLARIFICATIONS.md C1)
         paras = paragraphs(show(repo, head))
         base[p] = {"commit": head, "date": git(repo, "log", "-1", "--format=%cI", head).strip(), "paragraphs": len(paras)}
         print(f"{p}: {head[:10]} {base[p]['date'][:10]} {len(paras)} paragraphs >= {MIN_WORDS} words")
