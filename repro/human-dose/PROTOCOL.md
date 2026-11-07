@@ -1,6 +1,6 @@
 # Human-edit dose–response of the open EditLens score (WS-166) — frozen before any number
 
-Date: 2026-11-06. Status: bars **proposed, owner to confirm** before the first number (frozen-protocol step 3). Once confirmed, this file is committed with the message `WS-166: protocol frozen (before any number)` and any later change is a numbered deviation in §7.
+Date: 2026-11-06. Status: bars and §3 bin edges confirmed by the owner on 2026-11-07 (chat), unchanged from the 2026-11-06 draft. This file is committed with the message `WS-166: protocol frozen (before any number)` and any later change is a numbered deviation in §7.
 
 ## 1. Question
 
@@ -36,7 +36,7 @@ Secondary, descriptive: at what human edit magnitude does half of the AI-drafted
 - *Length null*: Δ regressed on the word-count change (y − x) within each bin; if the slope's CI excludes 0, the per-bin result is also reported after removing the length effect (exploratory).
 - *Same-set comparison*: human-direction bins are compared only with AI-direction bins of the same cosine range; no comparison across papers' means.
 
-## 5. Bars (proposed, owner to confirm; source: chat 2026-11-06, Claude draft)
+## 5. Bars (proposed in chat 2026-11-06; confirmed by the owner 2026-11-07, unchanged)
 
 Evaluated per bin with the §2 sample sizes; a bin with fewer rows is `not proven`.
 
@@ -44,7 +44,7 @@ Evaluated per bin with the §2 sample sizes; a bin with fewer rows is `not prove
 - **B2, last-editor**: the score tracks the last editor if, in at least two evaluated bins, the CI of R_bin lies entirely above 2.0 (small human edits collapse the score more than equal AI edits raise it). *Pass* / *fail* / *not proven* as above.
 - **B3, robust to human polish**: in at least two evaluated bins the CI of R_bin lies entirely below 0.5. B2 and B3 cannot both pass; if neither passes and B1 fails, the result is reported as mixed with the per-bin table.
 - **B4, reword vs content** (needs 20 rows from 10 paragraphs of each type in a bin): if the CI of mean Δ_content − mean Δ_reword excludes 0 in a bin, content and rewording are reported separately for the whole paper; otherwise together. No pass/fail; this decides the presentation.
-- **Threshold for the production run** (not a bar on the result, a gate on spending): the production Pangram API is run once, on every baseline and version paragraph and on the AI-direction rows, only when (a) ≥ 40 baseline paragraphs have a version, (b) at least three bins are evaluable on the 3B model, (c) the identity null is below 0.01. Budget cap $25. Its results are analysed with exactly this §3–§5 and reported next to the 3B ones; the paper's headline uses the production numbers if they exist.
+- **Threshold for the production run** (not a bar on the result, a gate on spending): the production Pangram API is run once, on every baseline and version paragraph and on the AI-direction rows, only when (a) ≥ 40 baseline paragraphs have a version, (b) at least three bins are evaluated on the 3B model (the §2 sample-size rule; "evaluable" and "evaluated" mean the same), (c) the identity null is below 0.01. Budget cap $25. Its results are analysed with exactly this §3–§5 and reported next to the 3B ones; the paper's headline uses the production numbers if they exist.
 
 ## 6. Checks before numbers
 
