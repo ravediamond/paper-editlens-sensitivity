@@ -8,7 +8,8 @@
    "origin": "assistant draft (Claude Code)",
    "verdict_reported": "AI, high",
    "cls": "flagged",
-   "dictated": false
+   "dictated": false,
+   "round": 1
   },
   {
    "id": "T2_claude_rhythm_rewrite",
@@ -18,7 +19,8 @@
    "origin": "assistant rewrite asked for varied sentence length (Claude chat)",
    "verdict_reported": "AI, high",
    "cls": "flagged",
-   "dictated": false
+   "dictated": false,
+   "round": 1
   },
   {
    "id": "T3_llm_statement",
@@ -28,7 +30,8 @@
    "origin": "assistant text modelled on the EditLens authors' LLM-usage statement; scored as a segment appended to T2",
    "verdict_reported": "human (segment); T2 part still AI",
    "cls": "human",
-   "dictated": false
+   "dictated": false,
+   "round": 1
   },
   {
    "id": "T4_owner_edit_of_claude_abstract",
@@ -38,7 +41,8 @@
    "origin": "owner hand edit of an assistant abstract (words changed, sentence order kept)",
    "verdict_reported": "AI 100 %",
    "cls": "flagged",
-   "dictated": false
+   "dictated": false,
+   "round": 1
   },
   {
    "id": "T5_dictated_abstract_raw",
@@ -48,7 +52,8 @@
    "origin": "owner dictation (Claude app voice input) from an assistant-written bullet outline, transcript unedited",
    "verdict_reported": "AI 100 %",
    "cls": "flagged",
-   "dictated": true
+   "dictated": true,
+   "round": 1
   },
   {
    "id": "T6_dictated_abstract_assistant_cleaned",
@@ -58,7 +63,8 @@
    "origin": "T5 cleaned by the assistant (numbers, fillers, punctuation)",
    "verdict_reported": "AI 100 %",
    "cls": "flagged",
-   "dictated": true
+   "dictated": true,
+   "round": 1
   },
   {
    "id": "T7_dictated_abstract_s1_s2_fixed",
@@ -68,7 +74,59 @@
    "origin": "owner dictation of abstract, introduction and method from assistant keyword outlines; numbers and grammar fixed by the assistant, no rewording",
    "verdict_reported": "AI (owner: not working)",
    "cls": "flagged",
-   "dictated": true
+   "dictated": true,
+   "round": 1
+  },
+  {
+   "id": "T8_owner_handwritten_v0",
+   "kind": "own",
+   "file": "texts/T8_owner_handwritten_v0.txt",
+   "words": 667,
+   "origin": "owner wrote abstract, introduction and method by hand from assistant keyword outlines (V0)",
+   "verdict_reported": "AI 35 %",
+   "ai_percent": 35,
+   "cls": "dose",
+   "dictated": false,
+   "round": 2
+  },
+  {
+   "id": "T9_v1_assistant_fact_fixes",
+   "kind": "own",
+   "file": "texts/T9_v1_assistant_fact_fixes.txt",
+   "words": 679,
+   "origin": "V0 with the assistant's fact and number fixes only (V1)",
+   "verdict_reported": "AI 54 %",
+   "ai_percent": 54,
+   "cls": "dose",
+   "dictated": false,
+   "round": 2
+  },
+  {
+   "id": "T10_v2_assistant_fact_grammar_fixes",
+   "kind": "own",
+   "file": "texts/T10_v2_assistant_fact_grammar_fixes.txt",
+   "words": 677,
+   "origin": "V1 with the assistant's grammar fixes, no rewording (V2)",
+   "verdict_reported": "AI 17 %",
+   "ai_percent": 17,
+   "cls": "dose",
+   "dictated": false,
+   "round": 2,
+   "flagged_sentences_reported": [
+    "Overall only 12 out of 37 paper claims hold, and several failures are not just near misses: the method loses to a code-based baseline."
+   ]
+  },
+  {
+   "id": "T11_v3_assistant_full_edit",
+   "kind": "own",
+   "file": "texts/T11_v3_assistant_full_edit.txt",
+   "words": 650,
+   "origin": "V0 rewritten by the assistant for fluency, same structure and content (V3)",
+   "verdict_reported": "AI 100 %",
+   "ai_percent": 100,
+   "cls": "dose",
+   "dictated": false,
+   "round": 2
   }
  ],
  "external": [

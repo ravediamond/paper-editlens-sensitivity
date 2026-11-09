@@ -1,0 +1,37 @@
+Most robot-learning papers today are tested either in simulation or on costly rigs above $20k. Of the 22 papers we analyzed, only 2 were tested on a rig under $5k.
+This raises a simple question: do their claims still hold on a cheap rig? That is the question this paper tries to answer.
+To answer it, we re-tested 37 claims from 22 recent robot-learning papers on our own low-cost rig, an SO-101 arm with an Nvidia Jetson Orin NX 16 GB (€1,350 in total), plus $45 of cloud GPU time.
+Every test followed two rules: the bar is set before any test, from the paper and its code only, and the cheapest baseline is tested first on the same data rows.
+The results: only 12 of the 37 claims hold, 18 fail outright, and several methods do not even beat the baseline.
+The failures fall into three classes:
+
+* Too slow for a small GPU
+* Judges that lose to episode length
+* Latents that lose to the commanded joints
+
+All these tests are consolidated in a single register at Shisso Robotics.
+Everything in this paper, from the numbers to the code and the data, is public and can be reproduced.
+
+1 Introduction
+
+More and more robotics papers are tested in simulation or on costly rigs above $20k: of our 22 papers, 16 were, and only 2 used a low-cost rig under $5k.
+Small teams working with low-cost rigs therefore have to guess, or check for themselves, which claims hold on their hardware. The register is meant to replace that guesswork with something they can simply look up.
+Each row of the register holds one claim in the paper's own words, the bar, our result and the data rows behind it.
+The rows come from our own write-ups, each published with its data; there are 29 so far.
+
+Take adaptive chunking as an example. The idea is to choose the chunk length from the entropy of sampled chunks. Low entropy means little uncertainty, so long chunks are fine (during transport, for instance), while high entropy calls for short, safer chunks (at the grasp). The catch is that this takes 20 sampled chunks: on our hardware, one decision took 4,751 ms against a real-time budget of 298 ms. That is too slow, since the next chunk must be ready before the robot runs out of actions in the current one. This failure is specific to our hardware, and the method may well work on faster, more expensive machines.
+
+Overall, only 12 of the 37 claims hold, and several failures are not near misses: the method loses to a simple code-based baseline.
+These failures fall into three classes, which we discuss in Section 4.
+
+2 How a row is made
+
+Each row in the register follows two rules.
+
+Rule 1: the bar is written from the paper and its code only, never after the first results, since a bar written later tends to drift toward the results already seen.
+
+Rule 2: the cheapest baseline is built and tested first. For a predictor, the question is whether it beats copy-last, where the next state equals the current state. For a learned latent, it is whether it beats a function that uses only the commanded joint values, which already contain the arm's state. For a success judge, it is whether it beats a function that looks only at episode length, which on its own says a lot about the outcome.
+
+This rule keeps the validation process efficient: if a method cannot beat its baseline, the bar no longer matters.
+
+We chose papers that have a real chance of running on our rig: world models, VLAs, failure monitors, action chunking and edge latency. The failure rate therefore describes this register, not the whole field. No paper was removed from the register because its numbers were bad; keeping every result is the point of the register.

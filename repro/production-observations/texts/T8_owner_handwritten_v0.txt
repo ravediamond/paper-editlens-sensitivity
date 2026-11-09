@@ -1,0 +1,36 @@
+Most of the robotic paper currently written are tested either in simulation or on costly RIG (>$20k). Out of the 22 papers we analyzed, only 2 were tested on cheaper rig (<$5k).
+But the question is, does the papers claims still hold on cheap rig. That is the question of we try to answer in this paper.
+FOr that we re-tested the 37 claims out of 22 recent robotic papers on our cheap rig: a so-101 and a Nvidia Jetson Orin NX 16gb ($1350 in total with) and some cloud gpu instance usage ($45).
+We set 2 rules for the our paper validation: make the bar before any test from the paper and the code only and test the cheapest baseline first on the same rows (data).
+Here's the results: only 12 out of 37 claims hold, and 18 outright fails and several fails to even the baseline.
+Among these failures, we found 3 failures classes:
+
+* Too slow on smaller GPU
+* Judge lose to episode length / latents lose to the commanded joints
+
+We consolidated all these tests into one single register at shisso robotics.
+Everything from this paper, from numbers to code to data is public and can be replicated.
+
+1 Introduction
+
+There are more and more robotic papers tested on simulation or costly rigs (above $20k), output of 22 papers, 16 were on these and only 2 on low cost rig (under $5k).
+Small teams using these low cost rigs needs to basically guess or validate themselves the different paper claims on their hardware. The register is there to no guess anymore and instead consult this register.
+In the register, 1 row equal 1 claim in the paper's word, the bar and also the data rows.
+These rows comes from our writes-ups, each published with data, 29 so far.
+
+Let's get the example of adaptive chunking. The idea is to chunk the length from the entropy of sampled chunks. Low entropy means that there is not a lot of uncertainty so long chunks are okay (during transport for example) and then when entropy is high, short chunks are more safe (short at the grasp). The problem is that it takes 20 sampled chunks and for the policy took 4,751 ms per decision against a real time budget of 298ms so it is too slow as the new chunks need to be ready before the robot runs out of action to run in the chunks. But this fails only on our hardware but on more expensive one it may work fine.
+
+Overall only 12 out of 37 paper facts validate and several failures are not just near misses, the method loses to a code based baseline.
+And these failures can be categorized into 3 failure classes (which we will see in the chapter 4).
+
+2 How a row is made
+
+There is basically 2 rules to create a row in the register:
+
+Rule 1: A bar should be written only with the paper and the code and now after the first results (since then the bar will drift to make pass the results already seen).
+
+Rule 2: The cheapest baseline is created and tested first. For example, for a predictor, can it beat a copy last function( where the next state is equal to the current step). For a latent learner, can it beat the a function using only the commanded joint values (which contains the state arm inside). For a success judge, can it beat a function checking only the episode length (which can give lots of information about the outcome).
+
+More precisely, the goal of rune 2 is to optimize the validation process as not beating the baseline means that the bar does not matter at all.
+
+The papers chosen for the validation are ones that can actually have a chance on our rig: World models, VLAs, failure monitor, chunking, edge latency failure rate. But no papers that give bas number were removed from the registry, transparency is key in the register.

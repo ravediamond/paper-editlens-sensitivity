@@ -411,6 +411,10 @@
   "value": "3",
   "anchor": "repro/production-observations/expected/summary.json dictated"
  },
+ "po_dose_words": {
+  "value": "650–679",
+  "anchor": "repro/production-observations/expected/summary.json dose_words (min–max)"
+ },
  "po_ext_flagged": {
   "value": "11",
   "anchor": "repro/production-observations/expected/summary.json ext_flagged_paragraphs"
@@ -430,6 +434,22 @@
  "po_own": {
   "value": "7",
   "anchor": "repro/production-observations/expected/summary.json own_texts"
+ },
+ "po_v0": {
+  "value": "35",
+  "anchor": "repro/production-observations/expected/summary.json dose_percent[0]"
+ },
+ "po_v1": {
+  "value": "54",
+  "anchor": "repro/production-observations/expected/summary.json dose_percent[1]"
+ },
+ "po_v2": {
+  "value": "17",
+  "anchor": "repro/production-observations/expected/summary.json dose_percent[2]"
+ },
+ "po_v3": {
+  "value": "100",
+  "anchor": "repro/production-observations/expected/summary.json dose_percent[3]"
  },
  "realsent": {
   "value": "+0.003",

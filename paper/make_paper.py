@@ -123,6 +123,9 @@ def collect():
     for k, key in [("po_own", "own_texts"), ("po_flagged", "own_flagged"), ("po_dictated", "dictated"), ("po_long_words", "longest_dictated_words"),
                    ("po_human_words", "human_segment_words"), ("po_ext_flagged", "ext_flagged_paragraphs")]:
         put(k, str(PO[key]), pa + key)
+    for i, v in enumerate(PO["dose_percent"]):
+        put(f"po_v{i}", str(v), pa + f"dose_percent[{i}]")
+    put("po_dose_words", f"{min(PO['dose_words'])}–{max(PO['dose_words'])}", pa + "dose_words (min–max)")
 
 CITE = {"thai2025editlens": "Thai et al. 2025", "saha2025polish": "Saha and Feizi 2025", "krishna2023paraphrase": "Krishna et al. 2023",
         "cheng2025adversarial": "Cheng et al. 2025", "masrour2025damage": "Masrour et al. 2025"}

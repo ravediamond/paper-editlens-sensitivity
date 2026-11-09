@@ -9,5 +9,17 @@
  "longest_dictated_words": 761,
  "human_segment_words": 35,
  "ext_flagged_paragraphs": 11,
- "ext_case_study_flagged": 1
+ "ext_case_study_flagged": 1,
+ "dose_percent": [
+  35,
+  54,
+  17,
+  100
+ ],
+ "dose_words": [
+  667,
+  679,
+  677,
+  650
+ ]
 }
