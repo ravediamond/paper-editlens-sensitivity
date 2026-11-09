@@ -119,6 +119,10 @@ def collect():
     put("trg_base_h", u(TR["base_mean"]["human_random"]), ta); put("trg_base_o", u(TR["base_mean"]["ours"]), ta)
     sh = [v["top10pct_share_of_positive"] for v in SA.values()]; sa = "repro/triggers/expected/saliency_summary.json"
     put("sal_n", str(len(sh)), sa); put("sal_min", f"{round(100 * min(sh))} %", sa); put("sal_max", f"{round(100 * max(sh))} %", sa)
+    PO = J(R / "production-observations" / "expected" / "summary.json"); pa = "repro/production-observations/expected/summary.json "
+    for k, key in [("po_own", "own_texts"), ("po_flagged", "own_flagged"), ("po_dictated", "dictated"), ("po_long_words", "longest_dictated_words"),
+                   ("po_human_words", "human_segment_words"), ("po_ext_flagged", "ext_flagged_paragraphs")]:
+        put(k, str(PO[key]), pa + key)
 
 CITE = {"thai2025editlens": "Thai et al. 2025", "saha2025polish": "Saha and Feizi 2025", "krishna2023paraphrase": "Krishna et al. 2023",
         "cheng2025adversarial": "Cheng et al. 2025", "masrour2025damage": "Masrour et al. 2025"}

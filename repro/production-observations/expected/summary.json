@@ -1,0 +1,13 @@
+{
+ "date": "2026-11-09",
+ "detector": "Pangram production detector, web page",
+ "own_texts": 7,
+ "own_flagged": 6,
+ "own_human": 1,
+ "dictated": 3,
+ "dictated_flagged": 3,
+ "longest_dictated_words": 761,
+ "human_segment_words": 35,
+ "ext_flagged_paragraphs": 11,
+ "ext_case_study_flagged": 1
+}

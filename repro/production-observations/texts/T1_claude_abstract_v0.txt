@@ -1,0 +1,6 @@
+What survives when a paper leaves the lab: re-testing 22 robot-learning papers on a €1,350 rig, and auditing our own pre-registration
+Ravindu Somawansa
+Shisso Robotics
+Abstract. 12 of the 37 paper claims we tested were valid on our hardware, an SO-101 arm with a Jetson Orin NX. The pieces cost €1,350 and the compute $45.10. For each claim we ran the cheapest baseline first and committed the pass mark before the test. The failures fall into three classes. Some methods miss the real-time budget on the edge GPU. Some zero-shot judges lose to a trivial signal. Some latent planners lose to the commanded joints. We propose these classes. We also read the commit history of our own gates. For most of them the bar comes before the result. For some the history does not show the order.
+Code and rows: github.com/ravediamond/paper-register-reproducibility
+Reproduce: make check. Every number carries its source file and protocol commit.

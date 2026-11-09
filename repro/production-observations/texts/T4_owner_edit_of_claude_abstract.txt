@@ -1,0 +1,7 @@
+Robot-learning papers are more and more experimented in simulation or on rigs that cost more than $20k. But small teams often has to decide whether a method will work on far cheaper hardware. In this paper, we re-test 37 claims from
+22 robot-learning papers on a €1350 rig, SO-101 arm with a Nvidia Jetson Orin NX and find that only 12 of them
+hold. For each claim, we commit the bar before the test and run the cheapest baseline first, on the same rows. We find
+that in multiple failures, this baseline is what the method loses against. We propose three classes of failure: methods too slow
+for edge GPU, zero-shot judges that lose to the episode length, and latent planners that lose to the commanded joints.
+Our results suggest that a re-test on a cheap rig should always start from its cheapest baseline. Every number in the paper can be
+replicated from the public repository.

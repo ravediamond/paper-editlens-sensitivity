@@ -407,6 +407,30 @@
   "value": "3.2",
   "anchor": "repro/rewrite-loop/expected/before_after_rows.json, 6305 words of the four rendered drafts (paragraphs of 40 words or more) at the listed API rate of $0.05 per 100 words (pangram.com/pricing, read 2026-11-05)"
  },
+ "po_dictated": {
+  "value": "3",
+  "anchor": "repro/production-observations/expected/summary.json dictated"
+ },
+ "po_ext_flagged": {
+  "value": "11",
+  "anchor": "repro/production-observations/expected/summary.json ext_flagged_paragraphs"
+ },
+ "po_flagged": {
+  "value": "6",
+  "anchor": "repro/production-observations/expected/summary.json own_flagged"
+ },
+ "po_human_words": {
+  "value": "35",
+  "anchor": "repro/production-observations/expected/summary.json human_segment_words"
+ },
+ "po_long_words": {
+  "value": "761",
+  "anchor": "repro/production-observations/expected/summary.json longest_dictated_words"
+ },
+ "po_own": {
+  "value": "7",
+  "anchor": "repro/production-observations/expected/summary.json own_texts"
+ },
  "realsent": {
   "value": "+0.003",
   "anchor": "repro/controlled-edits/expected/exp_insert.json effects.append_real_sentence_same_paper"

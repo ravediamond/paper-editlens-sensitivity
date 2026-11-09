@@ -1,0 +1,146 @@
+{
+ "rows": [
+  {
+   "id": "T1_claude_abstract_v0",
+   "kind": "own",
+   "file": "texts/T1_claude_abstract_v0.txt",
+   "words": 153,
+   "origin": "assistant draft (Claude Code)",
+   "verdict_reported": "AI, high",
+   "cls": "flagged",
+   "dictated": false
+  },
+  {
+   "id": "T2_claude_rhythm_rewrite",
+   "kind": "own",
+   "file": "texts/T2_claude_rhythm_rewrite.txt",
+   "words": 145,
+   "origin": "assistant rewrite asked for varied sentence length (Claude chat)",
+   "verdict_reported": "AI, high",
+   "cls": "flagged",
+   "dictated": false
+  },
+  {
+   "id": "T3_llm_statement",
+   "kind": "own",
+   "file": "texts/T3_llm_statement.txt",
+   "words": 35,
+   "origin": "assistant text modelled on the EditLens authors' LLM-usage statement; scored as a segment appended to T2",
+   "verdict_reported": "human (segment); T2 part still AI",
+   "cls": "human",
+   "dictated": false
+  },
+  {
+   "id": "T4_owner_edit_of_claude_abstract",
+   "kind": "own",
+   "file": "texts/T4_owner_edit_of_claude_abstract.txt",
+   "words": 156,
+   "origin": "owner hand edit of an assistant abstract (words changed, sentence order kept)",
+   "verdict_reported": "AI 100 %",
+   "cls": "flagged",
+   "dictated": false
+  },
+  {
+   "id": "T5_dictated_abstract_raw",
+   "kind": "own",
+   "file": "texts/T5_dictated_abstract_raw.txt",
+   "words": 273,
+   "origin": "owner dictation (Claude app voice input) from an assistant-written bullet outline, transcript unedited",
+   "verdict_reported": "AI 100 %",
+   "cls": "flagged",
+   "dictated": true
+  },
+  {
+   "id": "T6_dictated_abstract_assistant_cleaned",
+   "kind": "own",
+   "file": "texts/T6_dictated_abstract_assistant_cleaned.txt",
+   "words": 263,
+   "origin": "T5 cleaned by the assistant (numbers, fillers, punctuation)",
+   "verdict_reported": "AI 100 %",
+   "cls": "flagged",
+   "dictated": true
+  },
+  {
+   "id": "T7_dictated_abstract_s1_s2_fixed",
+   "kind": "own",
+   "file": "texts/T7_dictated_abstract_s1_s2_fixed.txt",
+   "words": 761,
+   "origin": "owner dictation of abstract, introduction and method from assistant keyword outlines; numbers and grammar fixed by the assistant, no rewording",
+   "verdict_reported": "AI (owner: not working)",
+   "cls": "flagged",
+   "dictated": true
+  }
+ ],
+ "external": [
+  {
+   "id": "E1_arXiv_2610.20563",
+   "kind": "external",
+   "paper": "Scaling Discovery Requires Forgetting (arXiv:2610.20563)",
+   "verdict_reported": "passes as a whole (owner)",
+   "flagged_paragraphs": [
+    {
+     "section": "abstract",
+     "starts": "However, we find that all three strategies eventually plateau",
+     "case_study": false
+    },
+    {
+     "section": "1",
+     "starts": "Automated research and discovery increasingly rely on iterative refinement",
+     "case_study": false
+    },
+    {
+     "section": "1",
+     "starts": "As the underlying models grow more capable",
+     "case_study": false
+    },
+    {
+     "section": "1",
+     "starts": "With more compute and time, an autoresearch agent can be scaled",
+     "case_study": false
+    },
+    {
+     "section": "2",
+     "starts": "FunSearch and AlphaEvolve pair an LLM with an automated evaluator",
+     "case_study": false
+    },
+    {
+     "section": "2",
+     "starts": "Allowing agents to read or debate one another's outputs",
+     "case_study": false
+    },
+    {
+     "section": "3",
+     "starts": "As this loop runs, two types of history accumulate",
+     "case_study": false
+    },
+    {
+     "section": "3.3",
+     "starts": "The agent then edits a candidate using only file tools",
+     "case_study": false
+    },
+    {
+     "section": "4",
+     "starts": "We evaluate the four tasks in three settings",
+     "case_study": false
+    },
+    {
+     "section": "4.1",
+     "starts": "For example, on AHC014 the parallel agents raise the mean",
+     "case_study": false
+    },
+    {
+     "section": "5",
+     "starts": "This behavior appears in all three replicates",
+     "case_study": true
+    }
+   ]
+  },
+  {
+   "id": "E2_mistral_large_4",
+   "kind": "external",
+   "paper": "Mistral Large 4 technical report (PDF, no arXiv id)",
+   "verdict_reported": "not flagged (owner's comparison; no score logged)",
+   "flagged_paragraphs": []
+  }
+ ]
+}
