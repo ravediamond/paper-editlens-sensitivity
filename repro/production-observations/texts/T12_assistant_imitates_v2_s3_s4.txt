@@ -1,0 +1,17 @@
+3 Results
+
+Figure 1 shows the whole register and Table 3 gives the verdicts, by paper and by claim row.
+
+On the claims coming from the papers, 12 out of 37 hold and 18 fail. There are also 8 rows that test our own baselines (for example, that the commanded joints beat the world model), and 5 of them hold. If we look at the papers instead of the claims, only 4 out of 22 papers reproduce and 13 fail. The rest are not proven (3), not tested (1) or withdrawn (1).
+
+The withdrawn one is a claim of ours. We thought the architecture of a VLA made the policy ignore its instruction, but when we ran the upstream trainer on our own data, the problem was our data and not the architecture. So we kept the row in the register and marked it as withdrawn.
+
+4 Three failure classes
+
+We already saw the first class with adaptive chunking in the introduction. The method may work on a faster GPU, but on the Orin one decision took 4,751 ms against a budget of 298 ms. We call this class A, the clock. It is the easiest one to avoid, because you can time a method on your device before building anything else.
+
+The second class is about judges, so models that tell if an episode is a success or a failure. We used Robometer, a 4B reward model, without any training on our rig, on 2,099 SO-101 rollouts. It got an AUROC of 0.818, but the episode length alone got 0.938. So a stopwatch was better than the model. We call this class B: judges of success, failure or progress that lose to a trivial signal.
+
+The third class is about learned latents. The world model has to rank the chunk that was really executed first, and it did it in 0.60 of the anchors, when the bar was 0.8. A baseline using only the actions got between 0.68 and 0.90. The latent is computed from the camera, but the commanded joints we send to the arm already contain most of its state. We call this class C: latents used to plan, rank or track progress that lose to the joints, to copy-last or to an action-only baseline.
+
+These classes are our proposal, from the author reading the 20 failed claim rows, and a second reader is needed to know if they hold. But for a small team, they give a simple order to test a paper: first time it on your device, then compare it with the cheapest baseline on the same rows, and only then look at the bar.

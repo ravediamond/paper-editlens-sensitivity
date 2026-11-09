@@ -127,6 +127,18 @@
    "cls": "dose",
    "dictated": false,
    "round": 2
+  },
+  {
+   "id": "T12_assistant_imitates_v2_s3_s4",
+   "kind": "own",
+   "file": "texts/T12_assistant_imitates_v2_s3_s4.txt",
+   "words": 441,
+   "origin": "assistant wrote sections 3 and 4 imitating the style of the owner's V2",
+   "verdict_reported": "AI 100 %",
+   "ai_percent": 100,
+   "cls": "imitation",
+   "dictated": false,
+   "round": 3
   }
  ],
  "external": [
